@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <Itf Name="I_PackML_Module" Id="{7b001dc0-f9db-40cb-b066-2f920fd9874a}">
+    <Declaration><![CDATA[INTERFACE I_PackML_Module 
+]]></Declaration>
+    <Method Name="ChangeMode" Id="{9f9a492c-3617-4d5c-9edf-64f53d46f8cb}">
+      <Declaration><![CDATA[METHOD ChangeMode
+VAR_INPUT
+	RequestedMode : DINT;
+END_VAR]]></Declaration>
+    </Method>
+    <Method Name="ChangeState" Id="{3913882f-b048-4a5b-93a4-23d3100b29b0}">
+      <Declaration><![CDATA[METHOD ChangeState
+VAR_INPUT
+	StateCommand : E_PMLCommand;
+END_VAR]]></Declaration>
+    </Method>
+    <Property Name="CurrentMode" Id="{0165e033-657f-46c0-bb2c-2b22ba5c4c88}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY CurrentMode : DINT]]></Declaration>
+      <Get Name="Get" Id="{7345c78b-d44d-459c-a6ed-ac02999b293a}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="CurrentState" Id="{b9d1fb52-23d7-4857-9742-d5e2e0b31192}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY CurrentState : E_PMLState]]></Declaration>
+      <Get Name="Get" Id="{e2bcd4f6-2a89-4d4b-93fa-7e9eee597592}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="Name" Id="{848440c2-33f1-4786-a861-a09db7b9c76f}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY Name : T_MaxString]]></Declaration>
+      <Get Name="Get" Id="{0ca88c35-2bea-41e1-b435-d95d16080f1e}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{3bef0a0c-a3ea-40f7-b1a6-62bed578d737}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+  </Itf>
+</TcPlcObject>

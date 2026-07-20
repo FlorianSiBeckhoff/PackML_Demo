@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <POU Name="MAIN" Id="{8644c25d-c61e-485a-a0b5-43a6501af7bc}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+    Machine : MachineModule('Machine 1');
+    Machine_HMI : PackMLStatemachine_HMI('Machine 1 HMI', Machine);
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[Machine.CyclicLogic();
+Machine_HMI.CyclicLogic();]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <POU Name="MachineModule" Id="{f38b58e2-29d7-47e4-8f75-9b53e79b925c}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK MachineModule EXTENDS PackMLModule
+VAR
+    Initialized : BOOL;
+    SimulatedError : BOOL;
+    {attribute 'OPC.UA.DA' := '1'}
+	_PackTags : ST_PMLV2022;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Folder Name="States" Id="{bb3b613c-88ab-4415-8f15-80f258caba57}" />
+    <Method Name="Aborting" Id="{9aa28c70-c4ca-4d51-a11e-b56b1256dd01}" FolderPath="States\">
+      <Declaration><![CDATA[METHOD Aborting : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Aborting := TRUE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Clearing" Id="{6f8ad479-ec38-443d-ab30-9b4302eeca53}" FolderPath="States\">
+      <Declaration><![CDATA[METHOD Clearing : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[SimulatedError := FALSE;
+Clearing := TRUE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="CyclicLogic" Id="{00116198-4e9a-460e-ade1-66a3b47cf1b9}">
+      <Declaration><![CDATA[METHOD CyclicLogic
+VAR_INST
+    ErrorRT : R_TRIG;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF NOT Initialized THEN
+    Initialize();
+    RETURN;
+END_IF
+
+SUPER^.CyclicLogic();
+UpdateTimers();
+
+ErrorRT(CLK := SimulatedError);
+IF ErrorRT.Q THEN
+    Trace.Error(Name, 'Error occured -> Abort Statemachine');
+    ChangeState(E_PMLCommand.Abort);
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Execute" Id="{ace76d86-f96d-47df-817b-a70a1446237c}" FolderPath="States\">
+      <Declaration><![CDATA[METHOD Execute : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Initialize" Id="{59dfdb77-8e18-4865-9f35-2a3d0dbaba63}">
+      <Declaration><![CDATA[METHOD Initialize
+VAR_INST
+	UnitModeConfig : FB_PMLUnitModeConfig;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[CASE SequenceState OF
+	0:
+		UnitModeConfig(eMode						  := E_PMLProtectedUnitMode.Production,
+					   sName						  := 'Mode Production',
+					   bDisableClearing				  := FALSE,
+					   bDisableStarting				  := FALSE,
+					   bDisableSuspended			  := FALSE,
+					   bDisableStopping				  := FALSE,
+					   bDisableAborting				  := FALSE,
+					   bDisableHolding				  := FALSE,
+					   bDisableHeld					  := FALSE,
+					   bDisableUnholding			  := FALSE,
+					   bDisableSuspending			  := FALSE,
+					   bDisableUnsuspending			  := FALSE,
+					   bDisableResetting			  := FALSE,
+					   bDisableIdle					  := FALSE,
+					   bDisableCompleting			  := FALSE,
+					   bDisableComplete				  := FALSE,
+					   bEnableUnitModeChangeStopped	  := TRUE,
+					   bEnableUnitModeChangeIdle	  := FALSE,
+					   bEnableUnitModeChangeSuspended := FALSE,
+					   bEnableUnitModeChangeExecute	  := FALSE,
+					   bEnableUnitModeChangeAborted	  := TRUE,
+					   bEnableUnitModeChangeHeld	  := FALSE,
+					   bEnableUnitModeChangeComplete  := FALSE,
+					   bError						  =>,
+					   nErrorId						  =>);
+
+		UnitModeConfig(eMode						  := E_PMLProtectedUnitMode.Maintenance,
+					   sName						  := 'Mode Maintenance',
+					   bDisableClearing				  := FALSE,
+					   bDisableStarting				  := FALSE,
+					   bDisableSuspended			  := FALSE,
+					   bDisableStopping				  := FALSE,
+					   bDisableAborting				  := FALSE,
+					   bDisableHolding				  := FALSE,
+					   bDisableHeld					  := FALSE,
+					   bDisableUnholding			  := FALSE,
+					   bDisableSuspending			  := FALSE,
+					   bDisableUnsuspending			  := FALSE,
+					   bDisableResetting			  := FALSE,
+					   bDisableIdle					  := FALSE,
+					   bDisableCompleting			  := FALSE,
+					   bDisableComplete				  := FALSE,
+					   bEnableUnitModeChangeStopped	  := TRUE,
+					   bEnableUnitModeChangeIdle	  := FALSE,
+					   bEnableUnitModeChangeSuspended := FALSE,
+					   bEnableUnitModeChangeExecute	  := FALSE,
+					   bEnableUnitModeChangeAborted	  := TRUE,
+					   bEnableUnitModeChangeHeld	  := FALSE,
+					   bEnableUnitModeChangeComplete  := FALSE,
+					   bError						  =>,
+					   nErrorId						  =>);
+
+		UnitModeConfig(eMode						  := E_PMLProtectedUnitMode.Manual,
+					   sName						  := 'Mode Manual',
+					   bDisableClearing				  := FALSE,
+					   bDisableStarting				  := FALSE,
+					   bDisableSuspended			  := FALSE,
+					   bDisableStopping				  := FALSE,
+					   bDisableAborting				  := FALSE,
+					   bDisableHolding				  := FALSE,
+					   bDisableHeld					  := FALSE,
+					   bDisableUnholding			  := FALSE,
+					   bDisableSuspending			  := FALSE,
+					   bDisableUnsuspending			  := FALSE,
+					   bDisableResetting			  := FALSE,
+					   bDisableIdle					  := FALSE,
+					   bDisableCompleting			  := FALSE,
+					   bDisableComplete				  := FALSE,
+					   bEnableUnitModeChangeStopped	  := TRUE,
+					   bEnableUnitModeChangeIdle	  := FALSE,
+					   bEnableUnitModeChangeSuspended := FALSE,
+					   bEnableUnitModeChangeExecute	  := FALSE,
+					   bEnableUnitModeChangeAborted	  := TRUE,
+					   bEnableUnitModeChangeHeld	  := FALSE,
+					   bEnableUnitModeChangeComplete  := FALSE,
+					   bError						  =>,
+					   nErrorId						  =>);
+
+		NextStep(SequenceState);
+
+	10:
+		Initialized := TRUE;
+END_CASE]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Resetting" Id="{df6dd125-ec55-4bb8-9a1e-426b92d0cc22}" FolderPath="States\">
+      <Declaration><![CDATA[METHOD Resetting : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Resetting := TRUE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Starting" Id="{1ce094b1-0554-4d3e-836f-a91d80819be7}" FolderPath="States\">
+      <Declaration><![CDATA[METHOD Starting : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[CASE CurrentMode OF
+    E_PMLProtectedUnitMode.Production:
+        CASE SequenceState OF 
+            0:
+                // Start Production Mode
+                NextStep(SequenceState);
+                
+            10:
+                // State completed -> transition by setting state to TRUE
+                Starting := TRUE;
+            
+        END_CASE
+    
+    E_PMLProtectedUnitMode.Maintenance:
+        Starting := TRUE;
+      
+ELSE
+    Starting := TRUE;
+END_CASE]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Stopping" Id="{0d5add85-4af3-4d84-ab12-902bbe3f8cbf}" FolderPath="States\">
+      <Declaration><![CDATA[METHOD Stopping : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Stopping := TRUE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="UpdateTimers" Id="{7cb1f824-a369-47d2-b77a-03aae7321075}">
+      <Declaration><![CDATA[METHOD UpdateTimers
+VAR
+	CurrentTime	 : T_DCTIME64;
+	TimeToUpdate : LREAL;
+END_VAR
+
+VAR_INST
+	LastTime  : T_DCTIME64 := F_GetActualDcTime64();
+	LastState : DINT;
+	LastMode  : DINT;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF _PackTags.Status.StateCurrent <> LastState THEN
+	MEMSET(ADR(_PackTags.Admin.StateTimeCurrent), 0, SIZEOF(_PackTags.Admin.StateTimeCurrent));
+	LastState := _PackTags.Status.StateCurrent;
+END_IF
+
+IF _PackTags.Status.UnitModeCurrent <> LastMode THEN
+	MEMSET(ADR(_PackTags.Admin.ModeTimeCurrent), 0, SIZEOF(_PackTags.Admin.ModeTimeCurrent));
+	LastMode := _PackTags.Status.UnitModeCurrent;
+END_IF
+
+CurrentTime := F_GetActualDcTime64();
+IF LastTime <> 0 THEN
+	TimeToUpdate := ULINT_TO_LREAL(CurrentTime - LastTime) / 1_000_000_000.0;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

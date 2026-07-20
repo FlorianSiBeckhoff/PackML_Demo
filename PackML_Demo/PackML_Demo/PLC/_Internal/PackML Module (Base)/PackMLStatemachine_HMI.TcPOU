@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <POU Name="PackMLStatemachine_HMI" Id="{f32e16d8-7939-44d5-b913-16463f06630a}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK PackMLStatemachine_HMI
+VAR
+	Statemachine				: I_PackML_Module;
+	NextAvailablePackMLCommands : NextAvailablePackMLCommands;
+	{ attribute 'TcHmiSymbol.AddSymbol' }
+	{ attribute 'TcHmiSymbol.AddSymbol.UserGroups' := '__SystemAdministrators,Admin' }
+	Statemachine_HMI : ST_PackMLStatemachine_HMI;
+    _Enabled : BOOL := TRUE;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="CyclicLogic" Id="{e08bc0c5-7fcf-42a1-9804-7af764482ad8}">
+      <Declaration><![CDATA[METHOD CyclicLogic
+VAR_INST
+	LastModeChangeCommand  : DINT;
+	LastStateChangeCommand : UDINT;
+END_VAR
+
+VAR_INST
+	StartRT : R_TRIG;
+	StopRT	: R_TRIG;
+	ResetRT : R_TRIG;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[{warning disable C0196}
+Statemachine_HMI.CurrentState := Statemachine.CurrentState;
+Statemachine_HMI.CurrentMode  := Statemachine.CurrentMode;
+Statemachine_HMI.Name		  := Statemachine.Name;
+Statemachine_HMI.HmiEnabled	  := Enabled;
+IF Enabled THEN
+	IF Statemachine_HMI.ModeCommand <> 0 THEN
+		Statemachine.ChangeMode(Statemachine_HMI.ModeCommand);
+		LastModeChangeCommand		 := Statemachine_HMI.ModeCommand;
+		Statemachine_HMI.ModeCommand := 0;
+	END_IF
+
+	{warning disable C0196}
+	IF Statemachine_HMI.StateCommand <> 0 THEN
+		Statemachine.ChangeState(TO_UDINT(Statemachine_HMI.StateCommand));
+		{warning disable C0195}
+		LastStateChangeCommand		  := Statemachine_HMI.StateCommand;
+		Statemachine_HMI.StateCommand := 0;
+	END_IF
+ELSE
+	Statemachine_HMI.StateCommand := 0;
+	Statemachine_HMI.ModeCommand  := 0;
+END_IF
+
+Statemachine_HMI.NextAvailableCommands := NextAvailablePackMLCommands.GetCommands(Statemachine_HMI.CurrentMode, Statemachine_HMI.CurrentState);
+
+{Region - Simplified Control}
+    Statemachine_HMI.StartPermissive := Statemachine_HMI.CurrentState = E_PMLState.Idle;
+    Statemachine_HMI.StopPermissive	 := Statemachine_HMI.CurrentState <> E_PMLState.Aborted;
+    Statemachine_HMI.ResetPermissive := Statemachine_HMI.CurrentState = E_PMLState.Aborted OR Statemachine_HMI.CurrentState = E_PMLState.Stopped;
+    StartRT(CLK := Statemachine_HMI.StartPressed);
+    IF StartRT.Q THEN
+        Statemachine.ChangeState(E_PMLCommand.Start);
+    END_IF
+    
+    StopRT(CLK := Statemachine_HMI.StopPressed);
+    IF StopRT.Q THEN
+        IF Statemachine_HMI.CurrentState = E_PMLState.Stopped THEN
+            Statemachine.ChangeState(E_PMLCommand.Abort);
+        ELSE
+            Statemachine.ChangeState(E_PMLCommand.Stop);
+        END_IF
+    END_IF
+    
+    ResetRT(CLK := Statemachine_HMI.ResetPressed);
+    IF ResetRT.Q THEN
+        IF Statemachine_HMI.CurrentState = E_PMLState.Aborted THEN
+            Statemachine.ChangeState(E_PMLCommand.Clear);
+        ELSE
+            Statemachine.ChangeState(E_PMLCommand.Reset);
+        END_IF
+    END_IF
+{endregion}
+
+
+
+]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="Enabled" Id="{180388bb-9c0d-48bf-a27a-840c862561d7}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY Enabled : BOOL]]></Declaration>
+      <Get Name="Get" Id="{f6dc17ae-fcd8-4cde-9154-8a1e7d9caffb}">
+        <Declaration><![CDATA[VAR
+END_VAR]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Enabled := _Enabled;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{8a089a02-8d6b-4bcc-a4b5-a05b2829a2ee}">
+        <Declaration><![CDATA[
+VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[_Enabled := Enabled;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Method Name="FB_Init" Id="{feec059a-29d3-40af-a51c-dc04556cd021}">
+      <Declaration><![CDATA[(*FB_Init is always available implicitly and it is used primarily for initialization.
+The return value is not evaluated. For a specific influence, you can also declare the
+methods explicitly and provide additional code there with the standard initialization
+code. You can evaluate the return value.*)
+METHOD FB_Init : BOOL
+VAR_INPUT
+	(* TRUE: the retain variables are initialized (reset warm / reset cold)*)
+	bInitRetains : BOOL;
+
+	(* TRUE: the instance will be copied to the copy code afterward (online change)   *)
+	bInCopyCode	 : BOOL;
+	Name		 : T_MaxString;
+	Statemachine : I_PackML_Module;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[THIS^.Statemachine := Statemachine;]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>
