@@ -3,6 +3,10 @@
   <POU Name="MachineModule" Id="{f38b58e2-29d7-47e4-8f75-9b53e79b925c}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK MachineModule EXTENDS PackMLModule
 VAR
+    // Add Components here...
+
+
+    // Internal Variables
     Initialized : BOOL;
     SimulatedError : BOOL;
     {attribute 'OPC.UA.DA' := '1'}
@@ -17,15 +21,33 @@ END_VAR
       <Declaration><![CDATA[METHOD Aborting : BOOL
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[Aborting := TRUE;]]></ST>
+        <ST><![CDATA[// Write Sequence here....
+CASE SequenceState OF 
+    0:
+        
+        NextStep(SequenceState);
+        
+    10:
+        // State completed -> transition by setting state to TRUE
+        Aborting := TRUE;
+END_CASE]]></ST>
       </Implementation>
     </Method>
     <Method Name="Clearing" Id="{6f8ad479-ec38-443d-ab30-9b4302eeca53}" FolderPath="States\">
       <Declaration><![CDATA[METHOD Clearing : BOOL
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[SimulatedError := FALSE;
-Clearing := TRUE;]]></ST>
+        <ST><![CDATA[// Write Sequence here....
+CASE SequenceState OF 
+    0:
+        
+        NextStep(SequenceState);
+        
+    10:
+        // State completed -> transition by setting state to TRUE
+        SimulatedError := FALSE;
+        Clearing := TRUE;
+END_CASE]]></ST>
       </Implementation>
     </Method>
     <Method Name="CyclicLogic" Id="{00116198-4e9a-460e-ade1-66a3b47cf1b9}">
@@ -154,7 +176,16 @@ END_CASE]]></ST>
       <Declaration><![CDATA[METHOD Resetting : BOOL
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[Resetting := TRUE;]]></ST>
+        <ST><![CDATA[// Write Sequence here....
+CASE SequenceState OF 
+    0:
+        
+        NextStep(SequenceState);
+        
+    10:
+        // State completed -> transition by setting state to TRUE
+        Resetting := TRUE;
+END_CASE]]></ST>
       </Implementation>
     </Method>
     <Method Name="Starting" Id="{1ce094b1-0554-4d3e-836f-a91d80819be7}" FolderPath="States\">
@@ -163,9 +194,10 @@ END_CASE]]></ST>
       <Implementation>
         <ST><![CDATA[CASE CurrentMode OF
     E_PMLProtectedUnitMode.Production:
+        // Start Production Mode
         CASE SequenceState OF 
             0:
-                // Start Production Mode
+                // Write Sequence here....
                 NextStep(SequenceState);
                 
             10:
@@ -186,7 +218,16 @@ END_CASE]]></ST>
       <Declaration><![CDATA[METHOD Stopping : BOOL
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[Stopping := TRUE;]]></ST>
+        <ST><![CDATA[// Write Sequence here....
+CASE SequenceState OF 
+    0:
+        
+        NextStep(SequenceState);
+        
+    10:
+        // State completed -> transition by setting state to TRUE
+        Stopping := TRUE;
+END_CASE]]></ST>
       </Implementation>
     </Method>
     <Method Name="UpdateTimers" Id="{7cb1f824-a369-47d2-b77a-03aae7321075}">

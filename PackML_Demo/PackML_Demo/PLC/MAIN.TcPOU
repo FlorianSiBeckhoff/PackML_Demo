@@ -4,6 +4,7 @@
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
     Machine : MachineModule('Machine 1');
+    // Connection to HMI
     Machine_HMI : PackMLStatemachine_HMI('Machine 1 HMI', Machine);
 END_VAR
 ]]></Declaration>
