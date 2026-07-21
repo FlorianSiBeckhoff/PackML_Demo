@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "definitions": {
+    "TcHmi.Controls.TcHmiExtendedControls.LabeledNumericInput": {
+      "type": "object",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkControlType": "LabeledNumericInput",
+      "frameworkControlNamespace": "TcHmi.Controls.TcHmiExtendedControls"
+    }
+  }
+}

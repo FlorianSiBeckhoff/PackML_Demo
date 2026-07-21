@@ -1,0 +1,66 @@
+{
+  "$schema": "../.hmiframework/Schema/FunctionDescription.Schema.json",
+  "apiVersion": 1,
+  "version": {
+    "full": "1.0.0.0",
+    "major": 1,
+    "minor": 0,
+    "revision": 0,
+    "build": 0
+  },
+  "dependencyFiles": [
+    {
+      "name": "Blink.js",
+      "type": "JavaScript",
+      "description": ""
+    }
+  ],
+  "function": {
+    "name": "Blink",
+    "namespace": "TcHmi.Functions.TcHmiExtendedControls",
+    "displayName": "Blink",
+    "description": "Adds a blinking animation to a control.",
+    "waitMode": "Synchronous",
+    "category": "ExtendedFunctions",
+    "returnValue": {},
+    "arguments": [
+      {
+        "name": "control",
+        "displayName": "Control",
+        "type": "tchmi:framework#/definitions/Control",
+        "description": "The control to apply blinking to.",
+        "defaultValue": null,
+        "required": true,
+        "bindable": true
+      },
+      {
+        "name": "colorProperty",
+        "displayName": "ColorProperty",
+        "type": "tchmi:framework#/definitions/ControlPropertyName",
+        "refTo": "control",
+        "description": "The color property of the control. Could be background color, fill color, border color, text color, etc.",
+        "defaultValue": null,
+        "required": true,
+        "bindable": true
+      },
+      {
+        "name": "color",
+        "displayName": "Color",
+        "type": "tchmi:framework#/definitions/SolidColor",
+        "description": "The color to blink.",
+        "defaultValue": null,
+        "required": true,
+        "bindable": true
+      },
+      {
+        "name": "blinkRate",
+        "displayName": "BlinkRate",
+        "type": "tchmi:general#/definitions/Number",
+        "description": "On/off blink interval in milliseconds. Set to 0 to remove blinking.",
+        "defaultValue": 1000,
+        "required": true,
+        "bindable": true
+      }
+    ]
+  }
+}

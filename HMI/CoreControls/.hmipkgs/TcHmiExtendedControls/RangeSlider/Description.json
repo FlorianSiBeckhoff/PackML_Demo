@@ -1,0 +1,221 @@
+{
+  "$schema": "../.hmiframework/Schema/ControlDescription.Schema.json",
+  "apiVersion": 1,
+  "name": "RangeSlider",
+  "namespace": "TcHmi.Controls.TcHmiExtendedControls",
+  "displayName": "Range Slider",
+  "version": {
+    "full": "1.0.0.0",
+    "major": 1,
+    "minor": 0,
+    "revision": 0,
+    "build": 0
+  },
+  "visible": true,
+  "themeable": "Standard",
+  "base": "TcHmi.Controls.System.TcHmiControl",
+  "description": "A range value slider for use when a precise value is not important.",
+  "properties": {
+    "containerControl": false,
+    "geometry": {
+      "width": 150,
+      "height": 26
+    }
+  },
+  "icons": [
+    {
+      "name": "Icons/RangeSliderIcon.png",
+      "width": 16,
+      "height": 16
+    }
+  ],
+  "template": "Template.html",
+  "dependencyFiles": [
+    {
+      "name": "RangeSlider.js",
+      "type": "JavaScript",
+      "description": "Contains all the main logic."
+    },
+    {
+      "name": "Style.css",
+      "type": "Stylesheet",
+      "description": "Theme independent style"
+    }
+  ],
+    "themes": {
+        "Base": {
+            "resources": [
+                {
+                    "name": "Themes/Base/Style.css",
+                    "type": "Stylesheet",
+                    "description": "Theme dependent style"
+                }
+            ]
+        },
+        "Base-Dark": {
+            "resources": [
+                {
+                    "name": "Themes/Base-Dark/Style.css",
+                    "type": "Stylesheet",
+                    "description": "Theme dependent style"
+                }
+            ]
+        }
+    },
+  "attributes": [
+    {
+      "name": "data-tchmi-value",
+      "propertyName": "Value",
+      "propertySetterName": "setValue",
+      "propertyGetterName": "getValue",
+      "displayName": "Value",
+      "visible": true,
+      "themeable": "Standard",
+      "displayPriority": 10,
+      "type": "tchmi:general#/definitions/Number",
+      "category": "Common",
+      "description": "",
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "defaultValue": null,
+      "defaultValueInternal": 0
+    },
+    {
+      "name": "data-tchmi-min-value",
+      "propertyName": "MinValue",
+      "propertySetterName": "setMinValue",
+      "propertyGetterName": "getMinValue",
+      "displayName": "MinValue",
+      "visible": true,
+      "themeable": "Standard",
+      "displayPriority": 10,
+      "type": "tchmi:general#/definitions/Number",
+      "category": "Common",
+      "description": "Minimum value allowed.",
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "defaultValue": null,
+      "defaultValueInternal": 0
+    },
+    {
+      "name": "data-tchmi-max-value",
+      "propertyName": "MaxValue",
+      "propertySetterName": "setMaxValue",
+      "propertyGetterName": "getMaxValue",
+      "displayName": "MaxValue",
+      "visible": true,
+      "themeable": "Standard",
+      "displayPriority": 10,
+      "type": "tchmi:general#/definitions/Number",
+      "category": "Common",
+      "description": "Maximum value allowed.",
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "defaultValue": null,
+      "defaultValueInternal": 100
+    },
+    {
+      "name": "data-tchmi-step",
+      "propertyName": "Step",
+      "propertySetterName": "setStep",
+      "propertyGetterName": "getStep",
+      "displayName": "Step",
+      "visible": true,
+      "themeable": "Standard",
+      "displayPriority": 10,
+      "type": "tchmi:general#/definitions/Number",
+      "category": "Common",
+      "description": "Possible values will be a multiple of the step.",
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "defaultValue": null,
+      "defaultValueInternal": 1
+    },
+    {
+      "name": "data-tchmi-orientation",
+      "propertyName": "Orientation",
+      "propertySetterName": "setOrientation",
+      "propertyGetterName": "getOrientation",
+      "displayName": "Orientation",
+      "visible": true,
+      "themeable": "Standard",
+      "displayPriority": 10,
+      "type": "tchmi:framework#/definitions/TcHmi.Controls.TcHmiExtendedControls.RangeSlider.SliderOrientation",
+      "category": "Common",
+      "description": "Set if the slider will be horizontal or vertical",
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "defaultValue": null,
+      "defaultValueInternal": "Horizontal"
+    },
+
+    {
+      "name": "data-tchmi-view-only",
+      "propertyName": "ViewOnly",
+      "propertySetterName": "setViewOnly",
+      "propertyGetterName": "getViewOnly",
+      "displayName": "ViewOnly",
+      "visible": true,
+      "themeable": "Standard",
+      "displayPriority": 10,
+      "type": "tchmi:general#/definitions/Boolean",
+      "category": "Common",
+      "description": "Enabling will remove users ability to move the slider.",
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "defaultValue": null,
+      "defaultValueInternal": false
+    },
+    {
+      "name": "data-tchmi-accent-color",
+      "propertyName": "AccentColor",
+      "propertySetterName": "setAccentColor",
+      "propertyGetterName": "getAccentColor",
+      "displayName": "AccentColor",
+      "visible": true,
+      "themeable": "Standard",
+      "displayPriority": 10,
+      "type": "tchmi:framework#/definitions/SolidColor",
+      "category": "Colors",
+      "description": "The color of the thumb and track to its left.",
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "defaultValue": null,
+      "defaultValueInternal": null
+    }
+  ],
+  "attributeCategories": [],
+  "functions": [],
+  "events": [
+    {
+      "name": ".onUserInteractionFinished",
+      "displayName": ".onUserInteractionFinished",
+      "visible": true,
+      "displayPriority": 5,
+      "category": "Operator",
+      "description": "The userinteractionfinished event is fired after leaving the textbox.",
+      "heritable": true
+    },
+    {
+      "name": ".onValueChanged",
+      "displayName": ".onValueChanged",
+      "visible": true,
+      "displayPriority": 10,
+      "category": "Control",
+      "description": "The valuechanged event is fired when the value was changed.",
+      "heritable": true
+    }
+  ],
+  "dataTypes": [
+    {
+      "schema": "Schema/Types.Schema.json"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+/** Styles for theme: Base-Dark */
+.TcHmi_Controls_TcHmiExtendedControls_LabeledInput {
+    color: #FFFFFF;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_LabeledInput-input {
+    background-color: #2a3845;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_LabeledInput-template-border {
+    
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_LabeledInput-unit {
+    color: var(--tchmi-foreground-color-4);
+}

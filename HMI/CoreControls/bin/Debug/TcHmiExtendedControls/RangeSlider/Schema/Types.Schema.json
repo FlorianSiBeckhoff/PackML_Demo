@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "definitions": {
+    "TcHmi.Controls.TcHmiExtendedControls.RangeSlider": {
+      "type": "object",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkControlType": "RangeSlider",
+      "frameworkControlNamespace": "TcHmi.Controls.TcHmiExtendedControls"
+    },
+    "TcHmi.Controls.TcHmiExtendedControls.RangeSlider.SliderOrientation": {
+      "type": "string",
+      "enum": [ "Horizontal", "Vertical" ]
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "definitions": {
+    "TcHmi.Controls.TcHmiExtendedControls.ConfirmationButton": {
+      "type": "object",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkControlType": "ConfirmationButton",
+      "frameworkControlNamespace": "TcHmi.Controls.TcHmiExtendedControls"
+    }
+  }
+}

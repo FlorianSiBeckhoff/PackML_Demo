@@ -1,0 +1,85 @@
+{
+  "$schema": "../.hmiframework/Schema/FunctionDescription.Schema.json",
+  "apiVersion": 1,
+  "version": {
+    "full": "1.0.0.0",
+    "major": 1,
+    "minor": 0,
+    "revision": 0,
+    "build": 0
+  },
+  "dependencyFiles": [
+    {
+      "name": "DatagridRowStyling.js",
+      "type": "JavaScript",
+      "description": ""
+    }
+  ],
+  "function": {
+    "name": "DatagridRowStyling",
+    "namespace": "TcHmi.Functions.TcHmiExtendedControls",
+    "displayName": "DatagridRowStyling",
+    "description": "To be used with the RowClassesProvider property of the TcHmiDatagrid. Configure condition which will highlight rows in the datagrid.",
+    "waitMode": "Synchronous",
+    "category": "ExtendedFunctions",
+    "returnValue": {
+      "type": "tchmi:general#/definitions/Array"
+    },
+    "arguments": [
+      {
+        "name": "rowValue",
+        "displayName": "rowValue",
+        "type": "tchmi:general#/definitions/Any",
+        "description": "The row value to use to determine the classes for the row.",
+        "defaultValue": null,
+        "required": true,
+        "bindable": true
+      },
+      {
+        "name": "dataIndex",
+        "displayName": "dataIndex",
+        "type": "tchmi:general#/definitions/Integer",
+        "description": "The index of the row data in the srcData array. ",
+        "defaultValue": null,
+        "required": true,
+        "bindable": true
+      },
+      {
+        "name": "rowNumber",
+        "displayName": "rowNumber",
+        "type": "tchmi:general#/definitions/Integer",
+        "description": "The row number. This may differ from the data index if the table is sorted. ",
+        "defaultValue": null,
+        "required": true,
+        "bindable": true
+      },
+      {
+        "name": "comparisonObject",
+        "displayName": "ComparisonObject",
+        "type": "tchmi:server#/definitions/filter",
+        "description": "",
+        "defaultValue": null,
+        "required": true,
+        "bindable": true
+      },
+      {
+        "name": "backgroudColor",
+        "displayName": "BackgroundColor",
+        "type": "tchmi:framework#/definitions/SolidColor",
+        "description": "",
+        "defaultValue": null,
+        "required": true,
+        "bindable": true
+      },
+      {
+        "name": "textColor",
+        "displayName": "TextColor",
+        "type": "tchmi:framework#/definitions/SolidColor",
+        "description": "",
+        "defaultValue": null,
+        "required": true,
+        "bindable": true
+      }
+    ]
+  }
+}

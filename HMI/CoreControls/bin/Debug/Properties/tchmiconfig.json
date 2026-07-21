@@ -1,0 +1,435 @@
+{
+  "$schema": "./../../Packages/Beckhoff.TwinCAT.HMI.Framework.14.3.431/runtimes/native1.12-tchmi/Schema/TchmiConfig.Schema.json",
+  "basePath": "./Beckhoff.TwinCAT.HMI.Framework",
+  "scaleMode": "None",
+  "startupView": null,
+  "loginPage": "",
+  "splash": {
+    "versionSource": "Framework"
+  },
+  "projectVersion": "",
+  "tcHmiServer": {
+    "websocketIntervalTime": 500,
+    "websocketTimeout": 20000,
+    "websocketSystemTimeout": 60000,
+    "websocketSubscriptionMode": null,
+    "disableOptionalSystemSubscriptions": false
+  },
+  "activeTheme": "Base-Dark",
+  "themes": {
+    "Base-Dark": {
+      "resources": [
+        {
+          "name": "Themes/Base-Dark/Base-Dark.theme",
+          "description": "",
+          "type": "ThemedValues"
+        },
+        {
+          "name": "Themes/Base-Dark/Base-DarkStyle.css",
+          "description": "",
+          "type": "Stylesheet"
+        }
+      ],
+      "replacesThemeForControls": [],
+      "replacesThemeForPackageComponents": []
+    },
+    "Base": {
+      "resources": [
+        {
+          "name": "Themes/Base/Base.theme",
+          "description": "",
+          "type": "ThemedValues"
+        },
+        {
+          "name": "Themes/Base/BaseStyle.css",
+          "description": "",
+          "type": "Stylesheet"
+        }
+      ],
+      "replacesThemeForControls": [],
+      "replacesThemeForPackageComponents": []
+    }
+  },
+  "dependencyFiles": [
+    {
+      "name": "Fonts/Fonts.css",
+      "description": "",
+      "type": "Stylesheet"
+    },
+    {
+      "name": "Functions/BuildManualPage.js",
+      "description": "",
+      "type": "JavaScript"
+    },
+    {
+      "name": "Functions/DisplayPermissiveText.js",
+      "description": "",
+      "type": "JavaScript"
+    },
+    {
+      "name": "Functions/GetKinematicStatus.js",
+      "description": "",
+      "type": "JavaScript"
+    },
+    {
+      "name": "Functions/GetModeName.js",
+      "description": "",
+      "type": "JavaScript"
+    },
+    {
+      "name": "Functions/GetCommandName.js",
+      "description": "",
+      "type": "JavaScript"
+    },
+    {
+      "name": "Functions/GetStateName.js",
+      "description": "",
+      "type": "JavaScript"
+    }
+  ],
+  "userControls": [
+    {
+      "url": "CoreControls/CoreButton.usercontrol"
+    },
+    {
+      "url": "CoreControls/PackMLControl.usercontrol"
+    },
+    {
+      "url": "CoreControls/Panels/AxisPTPPanel.usercontrol"
+    },
+    {
+      "url": "CoreControls/Panels/ChillerPanel.usercontrol"
+    },
+    {
+      "url": "CoreControls/Panels/CompressorPanel.usercontrol"
+    },
+    {
+      "url": "CoreControls/Panels/ConveyorPanel.usercontrol"
+    },
+    {
+      "url": "CoreControls/Panels/CuringOvenPanel.usercontrol"
+    },
+    {
+      "url": "CoreControls/Panels/CustomPanel.usercontrol"
+    },
+    {
+      "url": "CoreControls/Panels/CylinderPanel.usercontrol"
+    },
+    {
+      "url": "CoreControls/Panels/DispenserPanel.usercontrol"
+    },
+    {
+      "url": "CoreControls/Panels/EStopPanel.usercontrol"
+    },
+    {
+      "url": "CoreControls/Panels/FilePanel.usercontrol"
+    },
+    {
+      "url": "CoreControls/Panels/HeaterCoolerPanel.usercontrol"
+    },
+    {
+      "url": "CoreControls/Panels/IndexingTablePanel.usercontrol"
+    },
+    {
+      "url": "CoreControls/Panels/InterlockChainPanel.usercontrol"
+    },
+    {
+      "url": "CoreControls/Panels/KinematicPanel.usercontrol"
+    },
+    {
+      "url": "CoreControls/Panels/LightCurtainPanel.usercontrol"
+    },
+    {
+      "url": "CoreControls/Panels/MixingStationPanel.usercontrol"
+    },
+    {
+      "url": "CoreControls/Panels/NetworkSwitchPanel.usercontrol"
+    },
+    {
+      "url": "CoreControls/Panels/PackMLStatemachinePanel.usercontrol"
+    },
+    {
+      "url": "CoreControls/Panels/PickandPlaceUnitPanel.usercontrol"
+    },
+    {
+      "url": "CoreControls/Panels/PidControllerPanel.usercontrol"
+    },
+    {
+      "url": "CoreControls/Panels/PumpPanel.usercontrol"
+    },
+    {
+      "url": "CoreControls/Panels/RobotPanel.usercontrol"
+    },
+    {
+      "url": "CoreControls/Panels/SafetyDoorPanel.usercontrol"
+    },
+    {
+      "url": "CoreControls/Panels/UPSPanel.usercontrol"
+    },
+    {
+      "url": "CoreControls/Panels/ValvePanel.usercontrol"
+    },
+    {
+      "url": "CoreControls/Panels/VfdPanel.usercontrol"
+    },
+    {
+      "url": "CoreControls/Panels/VisionPanel.usercontrol"
+    },
+    {
+      "url": "CoreControls/Panels/XtsMoverPanel.usercontrol"
+    },
+    {
+      "url": "CoreControls/Panels/XtsPositionTriggerPanel.usercontrol"
+    },
+    {
+      "url": "CoreControls/Panels/XtsStationPanel.usercontrol"
+    },
+    {
+      "url": "CoreControls/Panels/XtsSystemPanel.usercontrol"
+    },
+    {
+      "url": "CoreControls/Panels/XtsZonePanel.usercontrol"
+    },
+    {
+      "url": "CoreControls/Popups/Chiller.usercontrol"
+    },
+    {
+      "url": "CoreControls/Popups/Compressor.usercontrol"
+    },
+    {
+      "url": "CoreControls/Popups/Conveyor.usercontrol"
+    },
+    {
+      "url": "CoreControls/Popups/CuringOven.usercontrol"
+    },
+    {
+      "url": "CoreControls/Popups/Cylinder.usercontrol"
+    },
+    {
+      "url": "CoreControls/Popups/Dispenser.usercontrol"
+    },
+    {
+      "url": "CoreControls/Popups/EStop.usercontrol"
+    },
+    {
+      "url": "CoreControls/Popups/File.usercontrol"
+    },
+    {
+      "url": "CoreControls/Popups/HeaterCooler.usercontrol"
+    },
+    {
+      "url": "CoreControls/Popups/IndexingTable.usercontrol"
+    },
+    {
+      "url": "CoreControls/Popups/InterlockChain.usercontrol"
+    },
+    {
+      "url": "CoreControls/Popups/Kinematic.usercontrol"
+    },
+    {
+      "url": "CoreControls/Popups/LightCurtain.usercontrol"
+    },
+    {
+      "url": "CoreControls/Popups/MixingStation.usercontrol"
+    },
+    {
+      "url": "CoreControls/Popups/NcAxis.usercontrol"
+    },
+    {
+      "url": "CoreControls/Popups/NetworkSwitch.usercontrol"
+    },
+    {
+      "url": "CoreControls/Popups/PackMLSelection.usercontrol"
+    },
+    {
+      "url": "CoreControls/Popups/PickAndPlaceUnit.usercontrol"
+    },
+    {
+      "url": "CoreControls/Popups/PidController.usercontrol"
+    },
+    {
+      "url": "CoreControls/Popups/Pump.usercontrol"
+    },
+    {
+      "url": "CoreControls/Popups/Robot.usercontrol"
+    },
+    {
+      "url": "CoreControls/Popups/SafetyDoor.usercontrol"
+    },
+    {
+      "url": "CoreControls/Popups/UPS.usercontrol"
+    },
+    {
+      "url": "CoreControls/Popups/Valve.usercontrol"
+    },
+    {
+      "url": "CoreControls/Popups/Vfd.usercontrol"
+    },
+    {
+      "url": "CoreControls/Popups/Vision.usercontrol"
+    },
+    {
+      "url": "CoreControls/Popups/XtsMoverCommands.usercontrol"
+    },
+    {
+      "url": "CoreControls/Popups/XtsPositionTrigger.usercontrol"
+    },
+    {
+      "url": "CoreControls/Popups/XtsStation.usercontrol"
+    },
+    {
+      "url": "CoreControls/Popups/XtsSystem.usercontrol"
+    },
+    {
+      "url": "CoreControls/Popups/XtsZone.usercontrol"
+    }
+  ],
+  "controls": [],
+  "content": [],
+  "views": [],
+  "userFunctions": [
+    {
+      "url": "Functions/BuildManualPage.js"
+    },
+    {
+      "url": "Functions/DisplayPermissiveText.js"
+    },
+    {
+      "url": "Functions/GetCommandName.js"
+    },
+    {
+      "url": "Functions/GetKinematicStatus.js"
+    },
+    {
+      "url": "Functions/GetModeName.js"
+    },
+    {
+      "url": "Functions/GetStateName.js"
+    }
+  ],
+  "symbols": {
+    "internal": {},
+    "themedResources": {
+      "DefaultGreen": {
+        "type": "tchmi:framework#/definitions/SolidColor",
+        "description": "",
+        "values": {
+          "Base-Dark": {
+            "color": "rgba(81, 215, 119, 1)"
+          },
+          "Base": {
+            "color": "rgba(81, 215, 119, 1)"
+          }
+        }
+      },
+      "DefaultOrange": {
+        "type": "tchmi:framework#/definitions/SolidColor",
+        "description": "",
+        "values": {
+          "Base-Dark": {
+            "color": "rgba(251, 167, 18, 1)"
+          },
+          "Base": {
+            "color": "rgba(251, 167, 18, 1)"
+          }
+        }
+      },
+      "DefaultRed": {
+        "type": "tchmi:framework#/definitions/SolidColor",
+        "description": "",
+        "values": {
+          "Base-Dark": {
+            "color": "rgba(239, 73, 73, 1)"
+          },
+          "Base": {
+            "color": "rgba(239, 73, 73, 1)"
+          }
+        }
+      },
+      "DefaultBlue": {
+        "type": "tchmi:framework#/definitions/SolidColor",
+        "description": "",
+        "values": {
+          "Base-Dark": {
+            "color": "rgba(23, 93, 184, 1)"
+          },
+          "Base": {
+            "color": "rgba(23, 93, 184, 1)"
+          }
+        }
+      },
+      "DefaultGrey": {
+        "type": "tchmi:framework#/definitions/SolidColor",
+        "description": "",
+        "values": {
+          "Base-Dark": {
+            "color": "rgba(185, 185, 185, 1)"
+          },
+          "Base": {
+            "color": "rgba(185, 185, 185, 1)"
+          }
+        }
+      }
+    },
+    "timer": {},
+    "package": {}
+  },
+  "intervals": {},
+  "trigger": [],
+  "actionTemplates": [],
+  "languages": {
+    "de": "Localization/de.localization",
+    "en": "Localization/en.localization",
+    "es": "Localization/es.localization"
+  },
+  "languageFallback": "",
+  "disableLoadingOptimization": false,
+  "creatorSettings": {
+    "viewport": {
+      "defaultWidth": 800,
+      "defaultHeight": 600
+    }
+  },
+  "binding": {
+    "symbolError": "Ignore",
+    "symbolWriteError": "ReadBack"
+  },
+  "packages": [
+    {
+      "name": "Beckhoff.TwinCAT.HMI.Controls",
+      "basePath": "/Beckhoff.TwinCAT.HMI.Controls",
+      "symbols": {
+        "package": {}
+      }
+    },
+    {
+      "name": "Beckhoff.TwinCAT.HMI.Framework",
+      "basePath": "/Beckhoff.TwinCAT.HMI.Framework",
+      "symbols": {
+        "package": {}
+      }
+    },
+    {
+      "name": "Beckhoff.TwinCAT.HMI.Functions",
+      "basePath": "/Beckhoff.TwinCAT.HMI.Functions",
+      "symbols": {
+        "package": {}
+      }
+    },
+    {
+      "name": "TcHmiExtendedControls",
+      "basePath": "/TcHmiExtendedControls",
+      "symbols": {
+        "package": {}
+      }
+    }
+  ],
+  "keyboardLayouts": [],
+  "systemKeyboard": {
+    "providerName": "",
+    "autoOpen": false
+  },
+  "systemPopups": {
+    "providerName": "Beckhoff.TcHmiPopups"
+  }
+}

@@ -1,0 +1,4 @@
+<div id="Home_1" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-creator-viewport-height="1000" data-tchmi-width-unit="%" data-tchmi-height-unit="%" data-tchmi-creator-viewport-width="1536">
+<div id="TcHmiStateMachineV3_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiPackML.TcHmiStateMachineV3" data-tchmi-height="494" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-width="1073" data-tchmi-width-unit="px" data-tchmi-state-current="%s%ADS.PLC1.MAIN.Machine_HMI.Statemachine_HMI::CurrentState%/s%" data-tchmi-unit-mode-current="%s%ADS.PLC1.MAIN.Machine_HMI.Statemachine_HMI::CurrentMode%/s%" data-tchmi-command="%s%ADS.PLC1.MAIN.Machine_HMI.Statemachine_HMI::StateCommand%/s%">
+</div>
+</div>

@@ -1,0 +1,1023 @@
+
+
+<div id="PackMLSelection_1" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControl" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-width-unit="%" data-tchmi-height-unit="%" data-tchmi-creator-viewport-width="820" data-tchmi-creator-viewport-height="450">
+
+<div id="TcHmiGridContainer_1" data-tchmi-type="TcHmi.Controls.System.TcHmiGridContainer" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-right="0" data-tchmi-bottom="0">
+
+<script data-tchmi-target-attribute="data-tchmi-grid-layout" type="application/json">
+{
+  "columnGap": 10.0,
+  "gridTemplateColumns": "1fr",
+  "gridTemplateRows": "1fr 1fr 2fr",
+  "rowGap": 10.0
+}
+</script>
+<div id="TcHmiFlexContainer_1" data-tchmi-type="TcHmi.Controls.System.TcHmiFlexContainer" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="%">
+
+<script data-tchmi-target-attribute="data-tchmi-grid-item-layout" type="application/json">
+{
+  "gridColumn": "1",
+  "gridRow": "1"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-flex-layout" type="application/json">
+{
+  "columnGap": 10.0,
+  "rowGap": 10.0
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "grouping-container"
+]
+</script>
+<div id="pmlselect-lbl-mode" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-text="%l%ModeSelect%/l%" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-word-wrap="true" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-height-unit="%">
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "text-centered"
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-flex-item-layout" type="application/json">
+{
+  "flex": "1 2 auto"
+}
+</script>
+</div>
+<div id="pmlselect-dd-mode" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiCombobox" data-tchmi-auto-focus-out="true" data-tchmi-combobox-text="Select" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-text-horizontal-alignment="Center" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-height-unit="%">
+<script data-tchmi-target-attribute="data-tchmi-content-padding" type="application/json">
+{
+  "top": 3,
+  "right": 3,
+  "bottom": 3,
+  "left": 3
+}
+</script>
+
+
+
+
+
+
+
+
+<script data-tchmi-target-attribute="data-tchmi-src-data" type="application/json">
+[
+  {
+    "id": 0.0,
+    "text": "%l%Invalid%/l%",
+    "value": "0"
+  },
+  {
+    "id": 1.0,
+    "text": "%l%Production%/l%",
+    "value": "1"
+  },
+  {
+    "id": 2.0,
+    "text": "%l%Maintenance%/l%",
+    "value": "2"
+  },
+  {
+    "id": 3.0,
+    "text": "%l%Manual%/l%",
+    "value": "3"
+  }
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onSelectionChanged",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%pp%StatemachineHMI::ModeCommand%/pp%",
+        "value": {
+          "objectType": "Symbol",
+          "valueType": "tchmi:general#/definitions/DINT",
+          "symbolExpression": "%ctx%owner::SelectedValue%/ctx%"
+        },
+        "asyncWait": true
+      }
+    ]
+  },
+  {
+    "event": "%pp%StatemachineHMI::CurrentMode%/pp%",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%pmlselect-dd-mode::SelectedId%/ctrl%",
+        "value": {
+          "objectType": "Symbol",
+          "valueType": "tchmi:general#/definitions/UDINT",
+          "symbolExpression": "%pp%StatemachineHMI::CurrentMode%/pp%"
+        },
+        "asyncWait": true
+      }
+    ]
+  }
+]</script>
+
+<script data-tchmi-target-attribute="data-tchmi-flex-item-layout" type="application/json">
+{
+  "flex": "2 1 auto"
+}
+</script>
+</div>
+</div>
+<div id="TcHmiFlexContainer_2" data-tchmi-type="TcHmi.Controls.System.TcHmiFlexContainer" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="%">
+
+<script data-tchmi-target-attribute="data-tchmi-grid-item-layout" type="application/json">
+{
+  "gridColumn": "1",
+  "gridRow": "2"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-flex-layout" type="application/json">
+{
+  "columnGap": 10.0,
+  "rowGap": 10.0
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "grouping-container"
+]
+</script>
+<div id="pmlselect-ddt-currentstate_1" data-tchmi-type="TcHmi.Controls.TcHmiExtendedControls.DataDisplayTile" data-tchmi-label-word-wrap="true" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-label="%l%CurrentMode%/l%" data-tchmi-label-position="Left" data-tchmi-label-to-value-ratio="1:1" data-tchmi-value="%f%TcHmi.Functions.HmiProj.GetModeName(%pp%StatemachineHMI::CurrentMode%/pp%)%/f%" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-height-unit="%">
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "%pp%StatemachineHMI::CurrentState%/pp%",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%pmlselect-ddt-currentstate::Value%/ctrl%",
+        "value": {
+          "objectType": "Symbol",
+          "valueType": "tchmi:general#/definitions/String",
+          "symbolExpression": "%f%TcHmi.Functions.Beckhoff.EnumToMemberName(%pp%StatemachineHMI::CurrentState%/pp%).replace('ePMLState_', '')%/f%"
+        },
+        "asyncWait": true
+      }
+    ]
+  }
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-flex-item-layout" type="application/json">
+{
+  "flex": "1 1 auto"
+}
+</script>
+</div>
+<div id="pmlselect-ddt-currentstate" data-tchmi-type="TcHmi.Controls.TcHmiExtendedControls.DataDisplayTile" data-tchmi-label-word-wrap="true" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-label="%l%CurrentState%/l%" data-tchmi-label-position="Left" data-tchmi-label-to-value-ratio="1:1" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-height-unit="%">
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "%pp%StatemachineHMI::CurrentState%/pp%",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%pmlselect-ddt-currentstate::Value%/ctrl%",
+        "value": {
+          "objectType": "Symbol",
+          "valueType": "tchmi:general#/definitions/String",
+          "symbolExpression": "%f%TcHmi.Functions.Beckhoff.EnumToMemberName(%pp%StatemachineHMI::CurrentState%/pp%).replace('ePMLState_', '')%/f%"
+        },
+        "asyncWait": true
+      }
+    ]
+  }
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-flex-item-layout" type="application/json">
+{
+  "flex": "1 1 auto"
+}
+</script>
+</div>
+</div>
+<div id="TcHmiGridContainer_2" data-tchmi-type="TcHmi.Controls.System.TcHmiGridContainer" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="%">
+
+<script data-tchmi-target-attribute="data-tchmi-grid-layout" type="application/json">
+{
+  "columnGap": 10.0,
+  "gridTemplateColumns": "1fr 1fr 1fr 1fr 1fr",
+  "gridTemplateRows": "1fr 3fr",
+  "rowGap": 10.0
+}
+</script>
+<div id="pmlselect-lbl-availablestates" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-text="%l%CommandAvailableState%/l%" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-word-wrap="true" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-width-unit="%" data-tchmi-height-unit="%">
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "text-centered"
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-grid-item-layout" type="application/json">
+{
+  "gridColumn": "1 / 6",
+  "gridRow": "1"
+}
+</script>
+</div>
+<div id="pmlselect-btn-state1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-word-wrap="true" data-tchmi-text="Undefined" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-width-unit="%" data-tchmi-height-unit="%">
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onPressed",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%pp%StatemachineHMI::StateCommand%/pp%",
+        "value": {
+          "objectType": "Symbol",
+          "valueType": "tchmi:server#/definitions/ADS-PLC1.Tc3_PackML_V3.E_PMLCommand",
+          "symbolExpression": "%pp%StatemachineHMI::NextAvailableCommands[0]%/pp%"
+        },
+        "asyncWait": true
+      }
+    ]
+  },
+  {
+    "event": "%pp%StatemachineHMI::NextAvailableCommands[0]%/pp%",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:server#/definitions/ADS-PLC1.Tc3_PackML_V3.E_PMLCommand",
+                  "symbolExpression": "%pp%StatemachineHMI::NextAvailableCommands[0]%/pp%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:server#/definitions/ADS-PLC1.Tc3_PackML_V3.E_PMLCommand",
+                  "value": 0
+                },
+                "compareOperator": "==",
+                "logic": null
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%pmlselect-btn-state1::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Collapsed"
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%pmlselect-btn-state1::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Visible"
+                },
+                "asyncWait": true
+              }
+            ]
+          }
+        ],
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%pmlselect-btn-state1::Text%/ctrl%",
+        "value": {
+          "objectType": "Symbol",
+          "valueType": "tchmi:general#/definitions/String",
+          "symbolExpression": "%f%TcHmi.Functions.Beckhoff.EnumToMemberName(%pp%StatemachineHMI::NextAvailableCommands[0]%/pp%).replace('ePMLCommand_', '')%/f%"
+        },
+        "asyncWait": true
+      }
+    ]
+  },
+  {
+    "event": "%pp%StatemachineHMI::CurrentMode%/pp%",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:server#/definitions/ADS-PLC1.Tc3_PackML_V3.E_PMLCommand",
+                  "symbolExpression": "%pp%StatemachineHMI::NextAvailableCommands[0]%/pp%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:server#/definitions/ADS-PLC1.Tc3_PackML_V3.E_PMLCommand",
+                  "value": 0
+                },
+                "compareOperator": "==",
+                "logic": null
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%pmlselect-btn-state1::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Collapsed"
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%pmlselect-btn-state1::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Visible"
+                },
+                "asyncWait": true
+              }
+            ]
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
+  }
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-grid-item-layout" type="application/json">
+{
+  "gridColumn": "1",
+  "gridRow": "2"
+}
+</script>
+</div>
+<div id="pmlselect-btn-state2" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-word-wrap="true" data-tchmi-text="Undefined" data-tchmi-grid-row-index="0" data-tchmi-grid-column-index="0" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-width-unit="%" data-tchmi-height-unit="%">
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onPressed",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%pp%StatemachineHMI::StateCommand%/pp%",
+        "value": {
+          "objectType": "Symbol",
+          "valueType": "tchmi:server#/definitions/ADS-PLC1.Tc3_PackML_V3.E_PMLCommand",
+          "symbolExpression": "%pp%StatemachineHMI::NextAvailableCommands[1]%/pp%"
+        },
+        "asyncWait": true
+      }
+    ]
+  },
+  {
+    "event": "%pp%StatemachineHMI::NextAvailableCommands[1]%/pp%",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:server#/definitions/ADS-PLC1.Tc3_PackML_V3.E_PMLCommand",
+                  "symbolExpression": "%pp%StatemachineHMI::NextAvailableCommands[1]%/pp%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:server#/definitions/ADS-PLC1.Tc3_PackML_V3.E_PMLCommand",
+                  "value": 0
+                },
+                "compareOperator": "==",
+                "logic": null
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%pmlselect-btn-state2::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Collapsed"
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%pmlselect-btn-state2::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Visible"
+                },
+                "asyncWait": true
+              }
+            ]
+          }
+        ],
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%pmlselect-btn-state2::Text%/ctrl%",
+        "value": {
+          "objectType": "Symbol",
+          "valueType": "tchmi:general#/definitions/String",
+          "symbolExpression": "%f%TcHmi.Functions.Beckhoff.EnumToMemberName(%pp%StatemachineHMI::NextAvailableCommands[1]%/pp%).replace('ePMLCommand_', '')%/f%"
+        },
+        "asyncWait": true
+      }
+    ]
+  },
+  {
+    "event": "%pp%StatemachineHMI::CurrentMode%/pp%",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:server#/definitions/ADS-PLC1.Tc3_PackML_V3.E_PMLCommand",
+                  "symbolExpression": "%pp%StatemachineHMI::NextAvailableCommands[1]%/pp%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:server#/definitions/ADS-PLC1.Tc3_PackML_V3.E_PMLCommand",
+                  "value": 0
+                },
+                "compareOperator": "==",
+                "logic": null
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%pmlselect-btn-state2::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Collapsed"
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%pmlselect-btn-state2::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Visible"
+                },
+                "asyncWait": true
+              }
+            ]
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
+  }
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-grid-item-layout" type="application/json">
+{
+  "gridColumn": "2",
+  "gridRow": "2"
+}
+</script>
+</div>
+<div id="pmlselect-btn-state3" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-word-wrap="true" data-tchmi-text="Undefined" data-tchmi-grid-row-index="0" data-tchmi-grid-column-index="0" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-width-unit="%" data-tchmi-height-unit="%">
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onPressed",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%pp%StatemachineHMI::StateCommand%/pp%",
+        "value": {
+          "objectType": "Symbol",
+          "valueType": "tchmi:server#/definitions/ADS-PLC1.Tc3_PackML_V3.E_PMLCommand",
+          "symbolExpression": "%pp%StatemachineHMI::NextAvailableCommands[2]%/pp%"
+        },
+        "asyncWait": true
+      }
+    ]
+  },
+  {
+    "event": "%pp%StatemachineHMI::NextAvailableCommands[2]%/pp%",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:server#/definitions/ADS-PLC1.Tc3_PackML_V3.E_PMLCommand",
+                  "symbolExpression": "%pp%StatemachineHMI::NextAvailableCommands[2]%/pp%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:server#/definitions/ADS-PLC1.Tc3_PackML_V3.E_PMLCommand",
+                  "value": 0
+                },
+                "compareOperator": "==",
+                "logic": null
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%pmlselect-btn-state3::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Collapsed"
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%pmlselect-btn-state3::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Visible"
+                },
+                "asyncWait": true
+              }
+            ]
+          }
+        ],
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%pmlselect-btn-state3::Text%/ctrl%",
+        "value": {
+          "objectType": "Symbol",
+          "valueType": "tchmi:general#/definitions/String",
+          "symbolExpression": "%f%TcHmi.Functions.Beckhoff.EnumToMemberName(%pp%StatemachineHMI::NextAvailableCommands[2]%/pp%).replace('ePMLCommand_', '')%/f%"
+        },
+        "asyncWait": true
+      }
+    ]
+  },
+  {
+    "event": "%pp%PackMLBaseModule::Status::Mode%/pp%",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:server#/definitions/ADS-PLC1.Tc3_PackML_V3.E_PMLCommand",
+                  "symbolExpression": "%pp%StatemachineHMI::NextAvailableCommands[2]%/pp%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:server#/definitions/ADS-PLC1.Tc3_PackML_V3.E_PMLCommand",
+                  "value": 0
+                },
+                "compareOperator": "==",
+                "logic": null
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%pmlselect-btn-state3::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Collapsed"
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%pmlselect-btn-state3::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Visible"
+                },
+                "asyncWait": true
+              }
+            ]
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
+  }
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-grid-item-layout" type="application/json">
+{
+  "gridColumn": "3",
+  "gridRow": "2"
+}
+</script>
+</div>
+<div id="pmlselect-btn-state4" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-word-wrap="true" data-tchmi-text="Undefined" data-tchmi-grid-row-index="0" data-tchmi-grid-column-index="0" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-width-unit="%" data-tchmi-height-unit="%">
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onPressed",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%pp%StatemachineHMI::StateCommand%/pp%",
+        "value": {
+          "objectType": "Symbol",
+          "valueType": "tchmi:server#/definitions/ADS-PLC1.Tc3_PackML_V3.E_PMLCommand",
+          "symbolExpression": "%pp%StatemachineHMI::NextAvailableCommands[3]%/pp%"
+        },
+        "asyncWait": true
+      }
+    ]
+  },
+  {
+    "event": "%pp%StatemachineHMI::NextAvailableCommands[3]%/pp%",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:server#/definitions/ADS-PLC1.Tc3_PackML_V3.E_PMLCommand",
+                  "symbolExpression": "%pp%StatemachineHMI::NextAvailableCommands[3]%/pp%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:server#/definitions/ADS-PLC1.Tc3_PackML_V3.E_PMLCommand",
+                  "value": 0
+                },
+                "compareOperator": "==",
+                "logic": null
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%pmlselect-btn-state4::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Collapsed"
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%pmlselect-btn-state4::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Visible"
+                },
+                "asyncWait": true
+              }
+            ]
+          }
+        ],
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%pmlselect-btn-state4::Text%/ctrl%",
+        "value": {
+          "objectType": "Symbol",
+          "valueType": "tchmi:general#/definitions/String",
+          "symbolExpression": "%f%TcHmi.Functions.Beckhoff.EnumToMemberName(%pp%StatemachineHMI::NextAvailableCommands[3]%/pp%).replace('ePMLCommand_', '')%/f%"
+        },
+        "asyncWait": true
+      }
+    ]
+  },
+  {
+    "event": "%pp%StatemachineHMI::CurrentMode%/pp%",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:server#/definitions/ADS-PLC1.Tc3_PackML_V3.E_PMLCommand",
+                  "symbolExpression": "%pp%StatemachineHMI::NextAvailableCommands[3]%/pp%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:server#/definitions/ADS-PLC1.Tc3_PackML_V3.E_PMLCommand",
+                  "value": 0
+                },
+                "compareOperator": "==",
+                "logic": null
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%pmlselect-btn-state4::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Collapsed"
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%pmlselect-btn-state4::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Visible"
+                },
+                "asyncWait": true
+              }
+            ]
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
+  }
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-grid-item-layout" type="application/json">
+{
+  "gridColumn": "4",
+  "gridRow": "2"
+}
+</script>
+</div>
+<div id="pmlselect-btn-state5" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-word-wrap="true" data-tchmi-text="Undefined" data-tchmi-grid-row-index="0" data-tchmi-grid-column-index="0" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-width-unit="%" data-tchmi-height-unit="%">
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+        [
+          {
+            "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onPressed",
+            "actions": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%pp%StatemachineHMI::StateCommand%/pp%",
+                "value": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:server#/definitions/ADS-PLC1.Tc3_PackML_V3.E_PMLCommand",
+                  "symbolExpression": "%pp%StatemachineHMI::NextAvailableCommands[4]%/pp%"
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "event": "%pp%StatemachineHMI::NextAvailableCommands[4]%/pp%",
+            "actions": [
+              {
+                "objectType": "Condition",
+                "active": true,
+                "parts": [
+                  {
+                    "if": [
+                      {
+                        "compare1": {
+                          "objectType": "Symbol",
+                          "valueType": "tchmi:server#/definitions/ADS-PLC1.Tc3_PackML_V3.E_PMLCommand",
+                          "symbolExpression": "%pp%StatemachineHMI::NextAvailableCommands[4]%/pp%"
+                        },
+                        "compare2": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:server#/definitions/ADS-PLC1.Tc3_PackML_V3.E_PMLCommand",
+                          "value": 0
+                        },
+                        "compareOperator": "==",
+                        "logic": null
+                      }
+                    ],
+                    "then": [
+                      {
+                        "objectType": "WriteToSymbol",
+                        "active": true,
+                        "symbolExpression": "%ctrl%pmlselect-btn-state5::Visibility%/ctrl%",
+                        "value": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:framework#/definitions/Visibility",
+                          "value": "Collapsed"
+                        },
+                        "asyncWait": true
+                      }
+                    ]
+                  },
+                  {
+                    "else": [
+                      {
+                        "objectType": "WriteToSymbol",
+                        "active": true,
+                        "symbolExpression": "%ctrl%pmlselect-btn-state5::Visibility%/ctrl%",
+                        "value": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:framework#/definitions/Visibility",
+                          "value": "Visible"
+                        },
+                        "asyncWait": true
+                      }
+                    ]
+                  }
+                ],
+                "asyncWait": true
+              },
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%pmlselect-btn-state5::Text%/ctrl%",
+                "value": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:general#/definitions/String",
+                  "symbolExpression": "%f%TcHmi.Functions.Beckhoff.EnumToMemberName(%pp%StatemachineHMI::NextAvailableCommands[4]%/pp%).replace('ePMLCommand_', '')%/f%"
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "event": "%pp%StatemachineHMI::CurrentMode%/pp%",
+            "actions": [
+              {
+                "objectType": "Condition",
+                "active": true,
+                "parts": [
+                  {
+                    "if": [
+                      {
+                        "compare1": {
+                          "objectType": "Symbol",
+                          "valueType": "tchmi:server#/definitions/ADS-PLC1.Tc3_PackML_V3.E_PMLCommand",
+                          "symbolExpression": "%pp%StatemachineHMI::NextAvailableCommands[4]%/pp%"
+                        },
+                        "compare2": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:server#/definitions/ADS-PLC1.Tc3_PackML_V3.E_PMLCommand",
+                          "value": 0
+                        },
+                        "compareOperator": "==",
+                        "logic": null
+                      }
+                    ],
+                    "then": [
+                      {
+                        "objectType": "WriteToSymbol",
+                        "active": true,
+                        "symbolExpression": "%ctrl%pmlselect-btn-state5::Visibility%/ctrl%",
+                        "value": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:framework#/definitions/Visibility",
+                          "value": "Collapsed"
+                        },
+                        "asyncWait": true
+                      }
+                    ]
+                  },
+                  {
+                    "else": [
+                      {
+                        "objectType": "WriteToSymbol",
+                        "active": true,
+                        "symbolExpression": "%ctrl%pmlselect-btn-state5::Visibility%/ctrl%",
+                        "value": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:framework#/definitions/Visibility",
+                          "value": "Visible"
+                        },
+                        "asyncWait": true
+                      }
+                    ]
+                  }
+                ],
+                "asyncWait": true
+              }
+            ]
+          }
+        ]
+    </script>
+
+<script data-tchmi-target-attribute="data-tchmi-grid-item-layout" type="application/json">
+{
+  "gridColumn": "5",
+  "gridRow": "2"
+}
+</script>
+</div>
+
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "grouping-container"
+]
+</script>
+</div>
+</div>
+</div>

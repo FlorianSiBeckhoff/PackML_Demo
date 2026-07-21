@@ -1,0 +1,75 @@
+/* General theme independed control css. */
+
+/* TODO: Add 15px grid gap for space between label and input */
+
+.TcHmi_Controls_TcHmiExtendedControls_LabeledInput {
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_LabeledInput-Template {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: inherit;
+}
+
+
+.TcHmi_Controls_TcHmiExtendedControls_LabeledInput-input {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: inherit;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_LabeledInput-unit {
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    top: 0px;
+    padding-right: 3px;
+    padding-left: 3px;
+    justify-content: end; /* default horizontal position */
+    align-items: center; /* default vertical position */
+    justify-self: end;
+    z-index: 2;
+    overflow: hidden;
+    color: var(--tchmi-foreground-color-4);
+}
+
+/* Unit grid placement */
+.label-right-elem .TcHmi_Controls_TcHmiExtendedControls_LabeledInput-unit {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.label-top-elem .TcHmi_Controls_TcHmiExtendedControls_LabeledInput-unit {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.label-bottom-unit .TcHmi_Controls_TcHmiExtendedControls_LabeledInput-unit {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+
+/* If the main use for this control is interaction
+    uncomment the following lines to give user feedback:
+    This overlays the whole control with a white color
+    and changes the mouse cursor */
+
+/*
+.TcHmi_Controls_TcHmiExtendedControls_LabeledInput.TcHmi_Controls_System_TcHmiControl-operate-disallowed::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 100;
+    cursor: not-allowed;
+}
+*/

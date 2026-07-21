@@ -1,0 +1,335 @@
+{
+  "$schema": "../.hmiframework/Schema/ControlDescription.Schema.json",
+  "apiVersion": 1,
+  "name": "MultiselectCombobox",
+  "namespace": "TcHmi.Controls.TcHmiExtendedControls",
+  "displayName": "Multiselect Combobox",
+  "version": {
+    "full": "1.0.0.0",
+    "major": 1,
+    "minor": 0,
+    "revision": 0,
+    "build": 0
+  },
+  "visible": true,
+  "themeable": "Standard",
+  "base": "TcHmi.Controls.Beckhoff.TcHmiCombobox",
+  "description": "A combobox which allows for selection of multiple options.",
+  "properties": {
+    "containerControl": false,
+    "geometry": {
+      "width": 264,
+      "height": 26
+    }
+  },
+  "icons": [
+    {
+      "name": "Icons/16x16.png",
+      "width": 16,
+      "height": 16
+    }
+  ],
+  "template": "Template.html",
+  "dependencyFiles": [
+    {
+      "name": "MultiselectCombobox.js",
+      "type": "JavaScript",
+      "description": "Contains all the main logic."
+    },
+    {
+      "name": "Style.css",
+      "type": "Stylesheet",
+      "description": "Theme independent style"
+    }
+  ],
+  "themes": {
+    "Base": {
+      "resources": [
+        {
+          "name": "Themes/Base/Style.css",
+          "type": "Stylesheet",
+          "description": "Theme dependent style"
+        }
+      ]
+    },
+    "Base-Dark": {
+      "resources": [
+        {
+          "name": "Themes/Base-Dark/Style.css",
+          "type": "Stylesheet",
+          "description": "Theme dependent style"
+        }
+      ]
+    }
+  },
+  "attributes": [
+    {
+      "name": "data-tchmi-src-data",
+      "propertyName": "SrcData",
+      "propertySetterName": "setSrcData",
+      "propertyGetterName": "getSrcData",
+      "displayName": "SrcData",
+      "visible": true,
+      "themeable": "Advanced",
+      "displayPriority": 10,
+      "type": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiCombobox.ListItemList",
+      "category": "Common",
+      "description": "Defines the Data for the dropdown menu.",
+      "readOnly": false,
+      "bindable": true,
+      "defaultBindingMode": "OneWay",
+      "heritable": true,
+      "allowSymbolExpressionsInObject": true,
+      "defaultValue": null,
+      "defaultValueInternal": null
+    },
+    {
+      "name": "data-tchmi-enum-data-symbol",
+      "propertyName": "EnumDataSymbol",
+      "propertySetterName": "setEnumDataSymbol",
+      "propertyGetterName": "getEnumDataSymbol",
+      "displayName": "EnumDataSymbol",
+      "visible": false,
+      "themeable": "None",
+      "displayPriority": 10,
+      "type": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiCombobox.EnumDataSymbol",
+      "category": "Common",
+      "description": "A symbol which represents an enumeration from the server. The combobox will list all members and select the current one. If selection is changed it will be synchronized with the symbol. This attribute overwrites an existing SrcData attribute.",
+      "readOnly": false,
+      "bindable": true,
+      "defaultBindingMode": "OneWay",
+      "heritable": true,
+      "allowEarlySymbolReferenceInjection": true,
+      "defaultValue": null,
+      "defaultValueInternal": null
+    },
+    {
+      "name": "data-tchmi-selected-texts",
+      "propertyName": "SelectedTexts",
+      "propertyGetterName": "getSelectedTexts",
+      "displayName": "SelectedTexts",
+      "visible": true,
+      "type": "tchmi:general#/definitions/Array",
+      "category": "Data",
+      "description": "Array of currently selected text",
+      "readOnly": true,
+      "bindable": false,
+      "defaultBindingMode": "OneWay",
+      "heritable": true,
+      "defaultValue": null,
+      "defaultValueInternal": []
+    },
+    {
+      "name": "data-tchmi-selected-indexes",
+      "propertyName": "SelectedIndexes",
+      "propertySetterName": "setSelectedIndexes",
+      "propertyGetterName": "getSelectedIndexes",
+      "displayName": "SelectedIndexes",
+      "visible": true,
+      "themeable": "Advanced",
+      "displayPriority": 20,
+      "type": "tchmi:general#/definitions/Array",
+      "category": "Data",
+      "description": "Array of currently selected indexes (guaranteed zero based)",
+      "readOnly": false,
+      "bindable": true,
+      "defaultBindingMode": "OneWay",
+      "heritable": true,
+      "defaultValue": null,
+      "defaultValueInternal": []
+    },
+    {
+      "name": "data-tchmi-selected-ids",
+      "propertyName": "SelectedIds",
+      "propertySetterName": "setSelectedIds",
+      "propertyGetterName": "getSelectedIds",
+      "displayName": "SelectedIds",
+      "visible": true,
+      "themeable": "Advanced",
+      "type": "tchmi:general#/definitions/Array",
+      "category": "Data",
+      "description": "Array of currently selected IDs (could be zero or one based depending on the input data).",
+      "readOnly": false,
+      "bindable": true,
+      "defaultBindingMode": "OneWay",
+      "heritable": true,
+      "defaultValue": null,
+      "defaultValueInternal": []
+    },
+    {
+      "name": "data-tchmi-selected-values",
+      "propertyName": "SelectedValues",
+      "propertyGetterName": "getSelectedValues",
+      "displayName": "SelectedValues",
+      "visible": true,
+      "type": "tchmi:general#/definitions/Array",
+      "category": "Data",
+      "description": "Array of currently selected values.",
+      "readOnly": true,
+      "bindable": false,
+      "defaultBindingMode": "OneWay",
+      "heritable": true,
+      "defaultValue": null,
+      "defaultValueInternal": []
+    },
+    {
+      "name": "data-tchmi-selection-array",
+      "propertyName": "SelectionArray",
+      "propertyGetterName": "getSelectionArray",
+      "displayName": "SelectionArray",
+      "visible": true,
+      "type": "tchmi:general#/definitions/Array",
+      "category": "Data",
+      "description": "Array of booleans describing if each item is selected or not.",
+      "readOnly": true,
+      "bindable": false,
+      "defaultBindingMode": "OneWay",
+      "heritable": true,
+      "defaultValue": null,
+      "defaultValueInternal": []
+    },
+    {
+      "name": "data-tchmi-allow-text-input",
+      "propertyName": "AllowTextInput",
+      "propertySetterName": "setAllowTextInput",
+      "propertyGetterName": "getAllowTextInput",
+      "displayName": "AllowTextInput",
+      "visible": false,
+      "displayPriority": 10,
+      "type": "tchmi:general#/definitions/Boolean",
+      "category": "Common",
+      "themeable": "Standard",
+      "description": "Defines whether text input is allow in the control or not.",
+      "readOnly": false,
+      "bindable": true,
+      "defaultBindingMode": "OneWay",
+      "heritable": true,
+      "defaultValue": null,
+      "defaultValueInternal": false
+    },
+    {
+      "name": "data-tchmi-auto-select-text",
+      "propertyName": "AutoSelectText",
+      "propertySetterName": "setAutoSelectText",
+      "propertyGetterName": "getAutoSelectText",
+      "displayName": "AutoSelectText",
+      "visible": false,
+      "themeable": "Advanced",
+      "displayPriority": 30,
+      "type": "tchmi:general#/definitions/Boolean",
+      "category": "Common",
+      "description": "Whether a focusIn selects the whole text or not.",
+      "readOnly": false,
+      "bindable": true,
+      "defaultBindingMode": "OneWay",
+      "heritable": true,
+      "defaultValue": null,
+      "defaultValueInternal": false
+    },
+    {
+      "name": "data-tchmi-auto-focus-out",
+      "propertyName": "AutoFocusOut",
+      "propertySetterName": "setAutoFocusOut",
+      "propertyGetterName": "getAutoFocusOut",
+      "displayName": "AutoFocusOut",
+      "visible": false,
+      "themeable": "Advanced",
+      "displayPriority": 20,
+      "type": "tchmi:general#/definitions/Boolean",
+      "category": "Common",
+      "description": "Whether the control should automatically lose focus when the user confirms or cancels his interaction via enter or escape.",
+      "readOnly": false,
+      "bindable": true,
+      "defaultBindingMode": "OneWay",
+      "heritable": true,
+      "defaultValue": true,
+      "defaultValueInternal": false
+    },
+    {
+      "name": "data-tchmi-text",
+      "propertyName": "Text",
+      "propertySetterName": "setText",
+      "propertyGetterName": "getText",
+      "displayName": "Text",
+      "visible": false,
+      "themeable": "Standard",
+      "displayPriority": 10,
+      "type": "tchmi:general#/definitions/String",
+      "category": "Common",
+      "description": "Defines the content of the textbox.",
+      "readOnly": false,
+      "bindable": true,
+      "defaultBindingMode": "OneWay",
+      "heritable": true,
+      "defaultValue": null,
+      "defaultValueInternal": ""
+    },
+    {
+      "name": "data-tchmi-drop-down-checkbox-background-color",
+      "propertyName": "DropDownCheckboxBackgroundColor",
+      "propertySetterName": "setDropDownCheckboxBackgroundColor",
+      "propertyGetterName": "getDropDownCheckboxBackgroundColor",
+      "displayName": "DropDownCheckboxBackgroundColor",
+      "visible": true,
+      "themeable": "Standard",
+      "displayPriority": 10,
+      "type": "tchmi:framework#/definitions/Color",
+      "category": "Colors",
+      "description": "Defines the background color of the dropdown checkbox's background when selected.",
+      "readOnly": false,
+      "bindable": true,
+      "defaultBindingMode": "OneWay",
+      "heritable": true,
+      "allowSymbolExpressionsInObject": true,
+      "defaultValue": null,
+      "defaultValueInternal": null
+    },
+    {
+      "name": "data-tchmi-drop-down-checkbox-check-color",
+      "propertyName": "DropDownCheckboxCheckColor",
+      "propertySetterName": "setDropDownCheckboxCheckColor",
+      "propertyGetterName": "getDropDownCheckboxCheckColor",
+      "displayName": "DropDownCheckboxCheckColor",
+      "visible": true,
+      "themeable": "Standard",
+      "displayPriority": 10,
+      "type": "tchmi:framework#/definitions/SolidColor",
+      "category": "Colors",
+      "description": "Defines the color of the dropdown checkbox's checkmarks.",
+      "readOnly": false,
+      "bindable": true,
+      "defaultBindingMode": "OneWay",
+      "heritable": true,
+      "allowSymbolExpressionsInObject": true,
+      "defaultValue": null,
+      "defaultValueInternal": null
+    }
+  ],
+  "attributeCategories": [],
+  "functions": [],
+  "events": [
+    {
+      "name": ".onFocusIn",
+      "displayName": ".onFocusIn",
+      "visible": false,
+      "displayPriority": 7,
+      "category": "Operator",
+      "description": "The focusin event is fired when an element is about to receive focus.",
+      "heritable": true
+    },
+    {
+      "name": ".onFocusOut",
+      "displayName": ".onFocusOut",
+      "visible": false,
+      "displayPriority": 7,
+      "category": "Operator",
+      "description": "The focusout event is fired when an element is about to lose focus.",
+      "heritable": true
+    }
+  ],
+  "dataTypes": [
+    {
+      "schema": "Schema/Types.Schema.json"
+    }
+  ]
+}

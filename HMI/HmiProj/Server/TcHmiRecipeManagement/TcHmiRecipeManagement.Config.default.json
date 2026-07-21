@@ -1,0 +1,23 @@
+{
+    "recipeList": {
+        "Recipes": {
+            "Recipe1": {
+                "recipeTypeName": "RecipeType",
+                "values": {}
+            },
+            "Recipe2": {
+                "recipeTypeName": "RecipeType",
+                "values": {}
+            }
+        }
+    },
+    "recipeTypeList": {
+        "RecipeType": {
+            "members": {},
+            "options": {
+                "enabled": "None"
+            },
+            "recipeTypeNames": []
+        }
+    }
+}

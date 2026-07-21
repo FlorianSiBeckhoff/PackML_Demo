@@ -1,0 +1,54 @@
+/* General theme independed control css. */
+
+.TcHmi_Controls_TcHmiExtendedControls_RangeSlider {
+    overflow: hidden;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_RangeSlider-Template {
+    width: 100%;
+    height: 100%;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiExtendedControls-template-rangeslider {
+    accent-color: /*#0075ff*/ var(--tchmi-highlight-color-1);
+    width: 97%;
+    height: 95%;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiExtendedControls-template-rangeslider:focus {
+    outline: none;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_RangeSlider-Template.vertical-range-slider input[type="range"] {
+    writing-mode: vertical-lr;
+    direction: rtl;
+    appearance: slider-vertical; /* deprecated but necessary for tchmi_designer to show vertical */
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_RangeSlider-Template.view-only input[type="range"] {
+    pointer-events: none;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_RangeSlider-Template.view-only input[type="range"]::-webkit-slider-thumb {
+    opacity: 0;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_RangeSlider-Template.view-only input[type="range"]::-ms-thumb {
+    opacity: 0;
+}
+
+/* If the main use for this control is interaction
+    uncomment the following lines to give user feedback:
+    This overlays the whole control with a white color
+    and changes the mouse cursor */
+.TcHmi_Controls_TcHmiExtendedControls_RangeSlider.TcHmi_Controls_System_TcHmiControl-operate-disallowed::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 100;
+    cursor: not-allowed;
+}

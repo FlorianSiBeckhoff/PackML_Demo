@@ -1,0 +1,102 @@
+/* General theme independed control css. */
+
+.TcHmi_Controls_TcHmiExtendedControls_MultiselectCombobox {
+    overflow: hidden;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_MultiselectCombobox-Template {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_MultiselectCombobox-template-dropdown [class$='-multiselect-checkbox'] {
+    position: absolute;
+    right: 15px;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_MultiselectCombobox-template-dropdown [class$='-container'] {
+    position: absolute;
+    right: 0px;
+}
+
+/* Customize the label (the container) */
+.TcHmi_Controls_TcHmiExtendedControls_MultiselectCombobox-template-dropdown [class$='-container'] {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.TcHmi_Controls_TcHmiExtendedControls_MultiselectCombobox-template-dropdown [class$='-container'] [class$='-multiselect-checkbox'] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    margin: 0;
+}
+
+/* Create a custom checkbox */
+.TcHmi_Controls_TcHmiExtendedControls_MultiselectCombobox-template-dropdown [class$='-checkmark'] {
+    position: absolute;
+    top: 0;
+    right: 15px;
+}
+
+/* On mouse-over, add a grey background color */
+.TcHmi_Controls_TcHmiExtendedControls_MultiselectCombobox-template-dropdown [class$='-container']:hover [class$='-multiselect-checkbox'] ~ [class$='-checkmark'] {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.TcHmi_Controls_TcHmiExtendedControls_MultiselectCombobox-template-dropdown [class$='-container'] [class$='-multiselect-checkbox']:checked ~ [class$='-checkmark'] {
+}
+
+/* Checkmark/indicator (hidden when not checked) */
+.TcHmi_Controls_TcHmiExtendedControls_MultiselectCombobox-template-dropdown [class$='-checkmark'] [class$='-multiselect-svg-path'] {
+    position: absolute;
+    display: none;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_MultiselectCombobox-template-dropdown [class$='-checkmark'] [class$='-multiselect-svg'] {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Show the checkmark when checked */
+.TcHmi_Controls_TcHmiExtendedControls_MultiselectCombobox-template-dropdown [class$='-container'] [class$='-multiselect-checkbox']:checked ~ [class$='-checkmark'] [class$='-multiselect-svg-path'] {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.TcHmi_Controls_TcHmiExtendedControls_MultiselectCombobox-template-dropdown [class$='-container'] [class$='-checkmark'] [class$='-multiselect-svg-path'] {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* If the main use for this control is interaction
+    uncomment the following lines to give user feedback:
+    This overlays the whole control with a white color
+    and changes the mouse cursor */
+
+/*
+.TcHmi_Controls_TcHmiExtendedControls_MultiselectCombobox.TcHmi_Controls_System_TcHmiControl-operate-disallowed::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 100;
+    cursor: not-allowed;
+}
+*/

@@ -1,0 +1,58 @@
+{
+  "$schema": "../.hmiframework/Schema/FunctionDescription.Schema.json",
+  "apiVersion": 1,
+  "version": {
+    "full": "0.0.0.0",
+    "major": 0,
+    "minor": 0,
+    "revision": 0,
+    "build": 0
+  },
+  "dependencyFiles": [
+    {
+      "name": "UseSystemTheme.js",
+      "type": "JavaScript",
+      "description": ""
+    }
+  ],
+  "function": {
+    "name": "UseSystemTheme",
+    "namespace": "TcHmi.Functions.TcHmiExtendedControls",
+    "displayName": "UseSystemTheme",
+    "description": "Toggles usage of local OS theme or custom HMI set theme.",
+    "waitMode": "Synchronous",
+    "category": "ExtendedFunctions",
+    "returnValue": {
+      "type": "tchmi:general#/definitions/VOID"
+    },
+    "arguments": [
+      {
+        "name": "useSystemTheme",
+        "displayName": "UseSystemTheme",
+        "type": "tchmi:general#/definitions/Boolean",
+        "description": "Set whether system theme is used or not.",
+        "defaultValue": false,
+        "required": true,
+        "bindable": true
+      },
+      {
+        "name": "defaultLightTheme",
+        "displayName": "DefaultLightTheme",
+        "type": "tchmi:framework#/definitions/ThemeName",
+        "description": "Name of default light theme.",
+        "defaultValue": "Base",
+        "required": true,
+        "bindable": true
+      },
+      {
+        "name": "defaultDarkTheme",
+        "displayName": "DefaultDarkTheme",
+        "type": "tchmi:framework#/definitions/ThemeName",
+        "description": "Name of default dark theme.",
+        "defaultValue": "Base-Dark",
+        "required": true,
+        "bindable": true
+      }
+    ]
+  }
+}

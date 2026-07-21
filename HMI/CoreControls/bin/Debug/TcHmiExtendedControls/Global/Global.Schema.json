@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "definitions": {
+    "TcHmi.Controls.TcHmiExtendedControls.ExtendedControls.LabelPosition": {
+      "type": "string",
+      "enum": [ "Left", "Right", "Top", "Bottom" ]
+    },
+    "TcHmi.Controls.TcHmiExtendedControls.ExtendedControls.LabelToControlRatio": {
+      "type": "string",
+      "enum": [ "2:1", "1:1", "1:2", "auto" ]
+    },
+    "TcHmi.Controls.TcHmiExtendedControls.ExtendedControls.UnitPosition": {
+      "title": "Input Unit Position",
+      "type": "string",
+      "enum": [ "Left", "Right" ],
+      "default": "Right"
+    }
+  }
+}

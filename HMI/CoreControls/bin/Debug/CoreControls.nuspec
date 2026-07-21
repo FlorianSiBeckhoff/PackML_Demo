@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>CoreControls</id>
+    <version>1.0.0</version>
+    <description>-.-</description>
+    <authors>SPT</authors>
+    <title>CoreControls</title>
+    <owners>Haris A</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <copyright>Copyright 2026</copyright>
+    <tags>TwinCAT HMI</tags>
+    <readme>README.md</readme>
+    <license type="file">LICENSE.txt</license>
+    <icon>images/logo.png</icon>
+    <dependencies>
+      <group targetFramework="native1.12-tchmi">
+        <dependency id="TcHmiExtendedControls" version="1.1.6" />
+        <dependency id="Beckhoff.TwinCAT.HMI.Functions" version="14.3.344" />
+        <dependency id="Beckhoff.TwinCAT.HMI.Controls" version="14.4.32" />
+        <dependency id="Beckhoff.TwinCAT.HMI.Framework" version="14.3.431" />
+        <dependency id="Beckhoff.TwinCAT.HMI.Server.Engineering" version="22.0.7791" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="LICENSE.txt" target="" exclude="bin\**" />
+    <file src="LICENSE.txt" target="runtimes\native1.12-tchmi\" exclude="bin\**" />
+    <file src="README.md" target="" exclude="bin\**" />
+    <file src="README.md" target="runtimes\native1.12-tchmi\" exclude="bin\**" />
+    <file src="images\logo.png" target="images\" exclude="bin\**" />
+    <file src="Manifest.json" target="runtimes\native1.12-tchmi\" exclude="bin\**" />
+    <file src="**/*.function.json" target="runtimes\native1.12-tchmi\" exclude=".hmipkgs\**;.hmiframework\**;bin\**" />
+    <file src="**/Description.json" target="runtimes\native1.12-tchmi\" exclude=".hmipkgs\**;.hmiframework\**;bin\**" />
+    <file src="**/Types.Schema.json" target="runtimes\native1.12-tchmi\" exclude=".hmipkgs\**;.hmiframework\**;bin\**" />
+    <file src="**/*.html" target="runtimes\native1.12-tchmi\" exclude=".hmipkgs\**;.hmiframework\**;bin\**" />
+    <file src="**/*.css" target="runtimes\native1.12-tchmi\" exclude=".hmipkgs\**;.hmiframework\**;bin\**" />
+    <file src="**/*.png" target="runtimes\native1.12-tchmi\" exclude=".hmipkgs\**;.hmiframework\**;bin\**" />
+    <file src="**/*.svg" target="runtimes\native1.12-tchmi\" exclude=".hmipkgs\**;.hmiframework\**;bin\**" />
+    <file src="**/*.jpg" target="runtimes\native1.12-tchmi\" exclude=".hmipkgs\**;.hmiframework\**;bin\**" />
+    <file src="**/*.ico" target="runtimes\native1.12-tchmi\" exclude=".hmipkgs\**;.hmiframework\**;bin\**" />
+    <file src="**/*.theme" target="runtimes\native1.12-tchmi\" exclude=".hmipkgs\**;.hmiframework\**;bin\**" />
+    <file src="**/*.js" target="runtimes\native1.12-tchmi\" exclude=".hmipkgs\**;.hmiframework\**;bin\**" />
+    <file src="**/*.js.map" target="runtimes\native1.12-tchmi\" exclude=".hmipkgs\**;.hmiframework\**;bin\**" />
+    <file src="**/*.ts" target="runtimes\native1.12-tchmi\" exclude=".hmipkgs\**;.hmiframework\**;bin\**" />
+    <file src="**/*.usercontrol" target="runtimes\native1.12-tchmi\" exclude=".hmipkgs\**;.hmiframework\**;bin\**" />
+    <file src="**/*.usercontrol.json" target="runtimes\native1.12-tchmi\" exclude=".hmipkgs\**;.hmiframework\**;bin\**" />
+    <file src="**/*.content" target="runtimes\native1.12-tchmi\" exclude=".hmipkgs\**;.hmiframework\**;bin\**" />
+    <file src="**/*.view" target="runtimes\native1.12-tchmi\" exclude=".hmipkgs\**;.hmiframework\**;bin\**" />
+    <file src="**/*.localization" target="runtimes\native1.12-tchmi\" exclude=".hmipkgs\**;.hmiframework\**;bin\**" />
+  </files>
+</package>

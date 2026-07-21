@@ -1,0 +1,9 @@
+:root {
+    --extended-contols-styled-dg-row-bg-color: #EF4949;
+    --extended-contols-styled-dg-row-text-color: white;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiDatagrid-template-row.tchmi-class-error .TcHmi_Controls_Beckhoff_TcHmiDatagrid-template-cell {
+    background-color: var(--extended-contols-styled-dg-row-bg-color);
+    color: var(--extended-contols-styled-dg-row-text-color);
+}

@@ -1,0 +1,26 @@
+/** Styles for theme: Base-Dark */
+.TcHmi_Controls_TcHmiExtendedControls_MultiselectCombobox {
+
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_MultiselectCombobox-template-dropdown [class$='-checkmark'] {
+    background-color: #444;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_MultiselectCombobox-template-dropdown [class$='-container']:hover input ~ [class$='-checkmark'] {
+    background-color: #666;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_MultiselectCombobox-template-dropdown [class$='-container'] input:checked ~ [class$='-checkmark'] {
+    background-color: #2196F3;
+}
+
+/* Checkbox checked */
+.TcHmi_Controls_TcHmiExtendedControls_MultiselectCombobox-template-dropdown [class$='-container'] [class$='-multiselect-checkbox']:checked ~ [class$='-checkmark'] {
+    background-color: var(--tchmi-highlight-color-1);
+}
+
+/* Style the checkmark/indicator */
+.TcHmi_Controls_TcHmiExtendedControls_MultiselectCombobox-template-dropdown [class$='-container'] [class$='-checkmark'] [class$='-multiselect-svg-path'] {
+    stroke: var(--tchmi-foreground-color-1);
+}

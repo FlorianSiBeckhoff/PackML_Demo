@@ -1,0 +1,45 @@
+{
+  "function": {
+    "name": "GetStateName",
+    "namespace": "TcHmi.Functions.CoreControls",
+    "displayName": "GetStateName",
+    "description": "",
+    "waitMode": "Synchronous",
+    "category": "",
+    "returnValue": {
+      "type": "tchmi:general#/definitions/String"
+    },
+    "visible": true,
+    "injectContextObject": false,
+    "arguments": [
+      {
+        "name": "State",
+        "displayName": "State",
+        "type": "tchmi:general#/definitions/Number",
+        "description": "Current State",
+        "defaultValue": null,
+        "required": true,
+        "bindable": true,
+        "restParameter": false,
+        "asReference": false,
+        "allowControlAttributeBindingOptions": false
+      }
+    ]
+  },
+  "$schema": "../.hmiframework/Schema/FunctionDescription.Schema.json",
+  "apiVersion": 1,
+  "version": {
+    "full": "0.0.0.0",
+    "major": 0,
+    "minor": 0,
+    "revision": 0,
+    "build": 0
+  },
+  "dependencyFiles": [
+    {
+      "name": "GetStateName.js",
+      "type": "JavaScript",
+      "description": ""
+    }
+  ]
+}

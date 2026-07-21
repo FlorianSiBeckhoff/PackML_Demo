@@ -1,0 +1,160 @@
+/* General theme independed control css. */
+
+.TcHmi_Controls_TcHmiExtendedControls_LinearGauge {
+    overflow: hidden;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_LinearGauge-Template {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: inherit;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_LinearGauge-template-background {
+    overflow: hidden;
+    width: 100%;
+    top: 0px;
+    bottom: 0px;
+    position: absolute;
+    z-index: 3;
+    border-radius: inherit;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_LinearGauge-template-foreground {
+    overflow: hidden;
+    bottom: 0px;
+    position: absolute;
+    z-index: 3;
+    transition: width 0.5s ease, height 0.5s ease;
+    border-radius: inherit;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_LinearGauge-template-value {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-width: 20px;
+    left: 40%;
+    right: 40%;
+    bottom: 0px;
+    position: absolute;
+    color: white;
+    mix-blend-mode: difference;
+    z-index: 3;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_LinearGauge-template-value.normal-blend {
+    mix-blend-mode: normal;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_LinearGauge-template-value.vertical-linear-gauge {
+    min-height: 10px;
+    left: 0%;
+    right: 0%;
+    height: unset;
+    top: 40%;
+    bottom: 40%;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_LinearGauge-template-min-max {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0px;
+    z-index: 2;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_LinearGauge-Template .min-max-display {
+    display: flex;
+    align-items: center;
+    position: absolute;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_LinearGauge-Template .min-horizontal {
+    justify-content: left;
+    left: 0px;
+    bottom: 0px;
+    width: 20%;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_LinearGauge-Template .max-horizontal {
+    justify-content: right;
+    right: 0px;
+    bottom: 0px;
+    width: 20%;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_LinearGauge-Template .min-vertical {
+    justify-content: center;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_LinearGauge-Template .max-vertical {
+    justify-content: center;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_LinearGauge-Template .animation {
+    background-color: rgba(255, 255, 255, 0.15);
+    position: relative;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_LinearGauge-Template .animation-horizontal {
+    height: 100%;
+    animation-name: animationHorizontal;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_LinearGauge-Template .animation-vertical {
+    width: 100%;
+    animation-name: animationVertical;
+}
+
+@keyframes animationHorizontal {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes animationVertical {
+    0% {
+        top: 100%;
+        height: 0%;
+    }
+
+    100% {
+        top: 0%;
+        height: 100%;
+    }
+}
+
+/* If the main use for this control is interaction
+    uncomment the following lines to give user feedback:
+    This overlays the whole control with a white color
+    and changes the mouse cursor */
+
+/*
+.TcHmi_Controls_TcHmiExtendedControls_LinearGauge.TcHmi_Controls_System_TcHmiControl-operate-disallowed::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 100;
+    cursor: not-allowed;
+}
+*/

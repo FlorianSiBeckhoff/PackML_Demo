@@ -1,0 +1,66 @@
+/* General theme independed control css. */
+
+.TcHmi_Controls_TcHmiExtendedControls_DetailedNumpad {
+    overflow: hidden;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_DetailedNumpad-Template {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-rows: 1fr 1fr 75%;
+    grid-template-columns: 1fr 1fr;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_DetailedNumpad-label {
+    width: 100%;
+    height: 100%;
+    grid-row: 1;
+    grid-column: 1 / span 2;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_DetailedNumpad-min {
+    width: 100%;
+    height: 100%;
+    grid-row: 2;
+    grid-column: 1;
+    align-content: center;
+    text-align: center;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_DetailedNumpad-max {
+    width: 100%;
+    height: 100%;
+    grid-row: 2;
+    grid-column: 2;
+    align-content: center;
+    text-align: center;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_DetailedNumpad-numpad {
+    width: 100%;
+    height: 100%;
+    grid-row: 3;
+    grid-column: 1 / span 2;
+}
+
+/* If the main use for this control is interaction
+    uncomment the following lines to give user feedback:
+    This overlays the whole control with a white color
+    and changes the mouse cursor */
+
+/*
+.TcHmi_Controls_TcHmiExtendedControls_DetailedNumpad.TcHmi_Controls_System_TcHmiControl-operate-disallowed::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 100;
+    cursor: not-allowed;
+}
+*/

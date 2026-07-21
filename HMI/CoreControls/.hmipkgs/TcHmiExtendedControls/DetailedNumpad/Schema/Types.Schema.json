@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "definitions": {
+    "TcHmi.Controls.TcHmiExtendedControls.DetailedNumpad": {
+      "type": "object",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkControlType": "DetailedNumpad",
+      "frameworkControlNamespace": "TcHmi.Controls.TcHmiExtendedControls"
+    },
+    "TcHmi.Controls.TcHmiExtendedControls.DetailedNumpad.ConfigData": {
+      "type": "object",
+      "propertiesMeta": [
+        {
+          "name": "min",
+          "displayName": "Min",
+          "category": "General",
+          "displayPriority": 10,
+          "description": "Minimum value allowed.",
+          "defaultValue": "0",
+          "defaultValueInternal": null
+        },
+        {
+          "name": "max",
+          "displayName": "Max",
+          "category": "General",
+          "displayPriority": 10,
+          "description": "Maximum value allowed.",
+          "defaultValue": "100",
+          "defaultValueInternal": null
+        },
+        {
+          "name": "label",
+          "displayName": "Label",
+          "category": "General",
+          "displayPriority": 10,
+          "description": "Label describing the input",
+          "defaultValue": "",
+          "defaultValueInternal": null
+        }
+      ],
+      "properties": {
+        "min": {
+          "type": "number"
+        },
+        "max": {
+          "type": "number"
+        },
+        "label": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

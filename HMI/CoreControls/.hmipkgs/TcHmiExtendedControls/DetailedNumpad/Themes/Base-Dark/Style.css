@@ -1,0 +1,8 @@
+/** Styles for theme: Base-Dark */
+.TcHmi_Controls_TcHmiExtendedControls_DetailedNumpad {
+    color: #FFFFFF;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_DetailedNumpad-input {
+    background-color: #2a3845;
+}

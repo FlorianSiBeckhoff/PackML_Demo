@@ -1,0 +1,8 @@
+/** Styles for theme: Base */
+.TcHmi_Controls_TcHmiExtendedControls_LinearGauge {
+    color: #000000;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_LinearGauge-template-background {
+    background: rgb(255 255 255 / 0.60);
+}

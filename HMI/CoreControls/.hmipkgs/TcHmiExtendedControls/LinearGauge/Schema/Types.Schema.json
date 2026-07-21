@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "definitions": {
+    "TcHmi.Controls.TcHmiExtendedControls.LinearGauge": {
+      "type": "object",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkControlType": "LinearGauge",
+      "frameworkControlNamespace": "TcHmi.Controls.TcHmiExtendedControls"
+    },
+    "TcHmi.Controls.TcHmiExtendedControls.LinearGauge.GaugeOrientation": {
+      "type": "string",
+      "enum": [ "Horizontal", "Vertical" ]
+    }
+  }
+}

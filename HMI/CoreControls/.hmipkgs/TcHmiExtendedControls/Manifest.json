@@ -1,0 +1,119 @@
+{
+  "modules": [
+    {
+      "type": "Package",
+      "nugetId": "Beckhoff.TwinCAT.HMI.Framework"
+    },
+    {
+      "type": "Package",
+      "nugetId": "Beckhoff.TwinCAT.HMI.Controls"
+    },
+    {
+      "type": "Resource",
+      "path": "./Global/GlobalSrc.js"
+    },
+    {
+      "type": "Resource",
+      "path": "./Global/GlobalStyles.css"
+    },
+    {
+      "type": "Control",
+      "basePath": "./LabeledInput",
+      "descriptionFile": "Description.json",
+      "toolboxCategory": ""
+    },
+    {
+      "type": "Control",
+      "basePath": "./LinearGauge",
+      "descriptionFile": "Description.json",
+      "toolboxCategory": ""
+    },
+    {
+      "type": "Control",
+      "basePath": "./RangeSlider",
+      "descriptionFile": "Description.json",
+      "toolboxCategory": ""
+    },
+    {
+      "type": "Function",
+      "basePath": "./EnumToString",
+      "descriptionFile": "EnumToString.function.json"
+    },
+    {
+      "type": "Control",
+      "basePath": "./StatusIndicator",
+      "descriptionFile": "Description.json",
+      "toolboxCategory": ""
+    },
+    {
+      "type": "Control",
+      "basePath": "./EnumRadioButton",
+      "descriptionFile": "Description.json",
+      "toolboxCategory": ""
+    },
+    {
+      "type": "Control",
+      "basePath": "./RadialGauge",
+      "descriptionFile": "Description.json",
+      "toolboxCategory": ""
+    },
+    {
+      "type": "Control",
+      "basePath": "./MultiselectCombobox",
+      "descriptionFile": "Description.json",
+      "toolboxCategory": ""
+    },
+    {
+      "type": "Control",
+      "basePath": "./LabeledNumericInput",
+      "descriptionFile": "Description.json",
+      "toolboxCategory": ""
+    },
+    {
+      "type": "Control",
+      "basePath": "./ConfirmationButton",
+      "descriptionFile": "Description.json",
+      "toolboxCategory": ""
+    },
+    {
+      "type": "Function",
+      "basePath": "./Blink",
+      "descriptionFile": "Blink.function.json"
+    },
+    {
+      "type": "Control",
+      "basePath": "./DataDisplayTile",
+      "descriptionFile": "Description.json",
+      "toolboxCategory": ""
+    },
+    {
+      "type": "Control",
+      "basePath": "./DetailedNumpad",
+      "descriptionFile": "Description.json",
+      "toolboxCategory": ""
+    },
+    {
+      "type": "Function",
+      "basePath": "./DatagridRowStyling",
+      "descriptionFile": "DatagridRowStyling.function.json"
+    },
+    {
+      "type": "Resource",
+      "path": "./DatagridRowStyling/DatagridRowStyles.css"
+    },
+    {
+      "type": "Function",
+      "basePath": "./UseSystemTheme",
+      "descriptionFile": "UseSystemTheme.function.json"
+    }
+  ],
+  "provideMetadata": {
+    "toolbox": {
+      "TcHmiExtendedControls": {
+        "200": "ExtendedControls"
+      }
+    }
+  },
+  "$schema": ".hmiframework/Schema/Manifest.Schema.json",
+  "apiVersion": 1
+}

@@ -1,0 +1,152 @@
+{
+  "$schema": "../.hmiframework/Schema/ControlDescription.Schema.json",
+  "apiVersion": 1,
+  "name": "DetailedNumpad",
+  "namespace": "TcHmi.Controls.TcHmiExtendedControls",
+  "displayName": "Detailed Numpad",
+  "version": {
+    "full": "1.0.0.0",
+    "major": 1,
+    "minor": 0,
+    "revision": 0,
+    "build": 0
+  },
+  "visible": true,
+  "themeable": "Standard",
+  "base": "TcHmi.Controls.Beckhoff.TcHmiKeyboard",
+  "description": "A numpad that displays the selected input's min, max, current value, and label.",
+  "properties": {
+    "containerControl": false,
+    "geometry": {
+      "width": 225,
+      "height": 300
+    }
+  },
+  "icons": [
+    {
+      "name": "Icons/16x16.png",
+      "width": 16,
+      "height": 16
+    }
+  ],
+  "template": "Template.html",
+  "dependencyFiles": [
+    {
+      "name": "DetailedNumpad.js",
+      "type": "JavaScript",
+      "description": "Contains all the main logic."
+    },
+    {
+      "name": "Style.css",
+      "type": "Stylesheet",
+      "description": "Theme independent style"
+    }
+  ],
+    "themes": {
+        "Base": {
+            "resources": [
+                {
+                    "name": "Themes/Base/Style.css",
+                    "type": "Stylesheet",
+                    "description": "Theme dependent style"
+                }
+            ]
+        },
+        "Base-Dark": {
+            "resources": [
+                {
+                    "name": "Themes/Base-Dark/Style.css",
+                    "type": "Stylesheet",
+                    "description": "Theme dependent style"
+                }
+            ]
+        }
+    },
+  "attributes": [
+    {
+      "name": "data-tchmi-layout-file",
+      "propertyName": "LayoutFile",
+      "propertySetterName": "setLayoutFile",
+      "propertyGetterName": "getLayoutFile",
+      "displayName": "LayoutFile",
+      "visible": true,
+      "themeable": "Advanced",
+      "displayPriority": 10,
+      "type": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiKeyboard.ProjectKeyboardLayouts",
+      "category": "Common",
+      "description": "Path to a layout JSON file in the project.\nThis overrides Layout.",
+      "readOnly": false,
+      "bindable": true,
+      "defaultBindingMode": "OneWay",
+      "heritable": true,
+      "defaultValue": "KeyboardLayouts/Numpad (plusminus).keyboard.json",
+      "defaultValueInternal": null
+    },
+    {
+      "name": "data-tchmi-scale-mode",
+      "propertyName": "ScaleMode",
+      "propertySetterName": "setScaleMode",
+      "propertyGetterName": "getScaleMode",
+      "displayName": "ScaleMode",
+      "visible": false,
+      "themeable": "Advanced",
+      "displayPriority": 60,
+      "type": "tchmi:framework#/definitions/ScaleMode",
+      "category": "Common",
+      "description": "Scale the content to control size. Alternatively, the control size can be set to the size of the displayed layout using WidthMode and HeightMode.",
+      "readOnly": false,
+      "bindable": true,
+      "defaultBindingMode": "OneWay",
+      "heritable": true,
+      "defaultValue": "ScaleToFill",
+      "defaultValueInternal": "None"
+    },
+    {
+      "name": "data-tchmi-config-data",
+      "propertyName": "ConfigData",
+      "propertySetterName": "setConfigData",
+      "propertyGetterName": "getConfigData",
+      "displayName": "ConfigData",
+      "visible": true,
+      "themeable": "Advanced",
+      "displayPriority": 10,
+      "type": "tchmi:framework#/definitions/TcHmi.Controls.TcHmiExtendedControls.DetailedNumpad.ConfigData",
+      "category": "Common",
+      "description": "Manually enter min, max, and label.",
+      "readOnly": false,
+      "bindable": true,
+      "defaultBindingMode": "OneWay",
+      "heritable": true,
+      "allowSymbolExpressionsInObject": true,
+      "defaultValue": null,
+      "defaultValueInternal": null
+    },
+    {
+      "name": "data-tchmi-input-control",
+      "propertyName": "InputControl",
+      "propertySetterName": "setInputControl",
+      "propertyGetterName": "getInputControl",
+      "displayName": "InputControl",
+      "visible": true,
+      "themeable": "Advanced",
+      "displayPriority": 10,
+      "type": "tchmi:framework#/definitions/Control",
+      "category": "Common",
+      "description": "Bind an input control to automatically pull min, max and label from. If the control does not have one of these properties, it can still be set in ConfigData. However, anything set it ConfigData will be overwritten by the control, if it is present.",
+      "readOnly": false,
+      "bindable": true,
+      "defaultBindingMode": "OneWay",
+      "heritable": true,
+      "defaultValue": null,
+      "defaultValueInternal": null
+    }
+  ],
+  "attributeCategories": [],
+  "functions": [],
+  "events": [],
+  "dataTypes": [
+    {
+      "schema": "Schema/Types.Schema.json"
+    }
+  ]
+}

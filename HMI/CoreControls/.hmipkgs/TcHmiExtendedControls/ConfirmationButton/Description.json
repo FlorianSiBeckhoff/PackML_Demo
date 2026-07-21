@@ -1,0 +1,146 @@
+{
+  "$schema": "../.hmiframework/Schema/ControlDescription.Schema.json",
+  "apiVersion": 1,
+  "name": "ConfirmationButton",
+  "namespace": "TcHmi.Controls.TcHmiExtendedControls",
+  "displayName": "Confirmation Button",
+  "version": {
+    "full": "1.0.0.0",
+    "major": 1,
+    "minor": 0,
+    "revision": 0,
+    "build": 0
+  },
+  "visible": true,
+  "themeable": "Standard",
+  "base": "TcHmi.Controls.Beckhoff.TcHmiButton",
+  "description": "A button that offers the ability to require confirmation from the user.",
+  "properties": {
+    "containerControl": false,
+    "geometry": {
+      "width": 100,
+      "height": 50
+    }
+  },
+  "icons": [
+    {
+      "name": "Icons/16x16.png",
+      "width": 16,
+      "height": 16
+    }
+  ],
+  "template": "Template.html",
+  "dependencyFiles": [
+    {
+      "name": "ConfirmationButton.js",
+      "type": "JavaScript",
+      "description": "Contains all the main logic."
+    },
+    {
+      "name": "Style.css",
+      "type": "Stylesheet",
+      "description": "Theme independent style"
+    }
+  ],
+    "themes": {
+        "Base": {
+            "resources": [
+                {
+                    "name": "Themes/Base/Style.css",
+                    "type": "Stylesheet",
+                    "description": "Theme dependent style"
+                }
+            ]
+        },
+        "Base-Dark": {
+            "resources": [
+                {
+                    "name": "Themes/Base-Dark/Style.css",
+                    "type": "Stylesheet",
+                    "description": "Theme dependent style"
+                }
+            ]
+        }
+    },
+  "attributes": [
+    {
+      "name": "data-tchmi-text",
+      "propertyName": "Text",
+      "propertySetterName": "setText",
+      "propertyGetterName": "getText",
+      "displayName": "Text",
+      "visible": true,
+      "themeable": "Standard",
+      "displayPriority": 10,
+      "type": "tchmi:general#/definitions/String",
+      "category": "Common",
+      "description": "Defines an optional text in the button.",
+      "readOnly": false,
+      "bindable": true,
+      "defaultBindingMode": "OneWay",
+      "heritable": true,
+      "defaultValue": "Confirmation Button",
+      "defaultValueInternal": null
+    },
+    {
+      "name": "data-tchmi-require-confirmation",
+      "displayName": "Require Confirmation",
+      "type": "tchmi:general#/definitions/Boolean",
+      "propertyGetterName": "getRequireConfirmation",
+      "propertySetterName": "setRequireConfirmation",
+      "propertyName": "RequireConfirmation",
+      "bindable": true,
+      "category": "Common",
+      "defaultValue": null,
+      "defaultValueInternal": true,
+      "description": "If true, a popup will appear, requiring user to confirm or cancel their action."
+    },
+    {
+      "name": "data-tchmi-confirmation-message",
+      "displayName": "Confirmation Message",
+      "type": "tchmi:general#/definitions/String",
+      "propertyGetterName": "getConfirmationMessage",
+      "propertySetterName": "setConfirmationMessage",
+      "propertyName": "ConfirmationMessage",
+      "bindable": true,
+      "category": "Common",
+      "defaultValue": null,
+      "defaultValueInternal": "Are you sure?",
+      "description": "Message to be displayed in confirmation popup. Limited to 100 characters."
+    }
+  ],
+  "attributeCategories": [],
+  "functions": [],
+  "events": [
+    {
+      "name": ".onConfirmed",
+      "displayName": ".onConfirmed",
+      "visible": true,
+      "displayPriority": 10,
+      "category": "Control",
+      "description": "The confirmed event is fired when the action was confirmed from the popup modal.",
+      "heritable": true
+    },
+    {
+      "name": ".onCanceled",
+      "displayName": ".onCanceled",
+      "visible": true,
+      "displayPriority": 10,
+      "category": "Control",
+      "description": "The canceled event is fired when the action was canceled from the popup modal.",
+      "heritable": true
+    },
+    {
+      "name": ".onPressed",
+      "displayName": ".onCanceled",
+      "visible": false,
+      "category": "Operator",
+      "heritable": true
+    }
+  ],
+  "dataTypes": [
+    {
+      "schema": "Schema/Types.Schema.json"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "function": {
+    "name": "GetCommandName",
+    "namespace": "TcHmi.Functions.CoreControls",
+    "displayName": "GetCommandName",
+    "description": "",
+    "waitMode": "Synchronous",
+    "category": "",
+    "returnValue": {
+      "type": "tchmi:general#/definitions/String"
+    },
+    "visible": true,
+    "injectContextObject": false,
+    "arguments": [
+      {
+        "name": "Command",
+        "displayName": "Command",
+        "type": "tchmi:general#/definitions/Number",
+        "description": "Available Command",
+        "defaultValue": null,
+        "required": true,
+        "bindable": true,
+        "restParameter": false,
+        "asReference": false,
+        "allowControlAttributeBindingOptions": false
+      }
+    ]
+  },
+  "$schema": "../.hmiframework/Schema/FunctionDescription.Schema.json",
+  "apiVersion": 1,
+  "version": {
+    "full": "0.0.0.0",
+    "major": 0,
+    "minor": 0,
+    "revision": 0,
+    "build": 0
+  },
+  "dependencyFiles": [
+    {
+      "name": "GetCommandName.js",
+      "type": "JavaScript",
+      "description": ""
+    }
+  ]
+}

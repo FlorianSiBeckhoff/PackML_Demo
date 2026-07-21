@@ -1,0 +1,66 @@
+/* General theme independed control css. */
+
+.TcHmi_Controls_TcHmiExtendedControls_StatusIndicator {
+    overflow: hidden;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_StatusIndicator-Template {
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: none 1fr none;
+    overflow: hidden;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_StatusIndicator-indicator {
+    width: 100%;
+    height: 100%;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_StatusIndicator-template-svg-ellipse {
+    stroke-width: 0;
+    stroke: #00000000;
+    fill: #EF4949;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_StatusIndicator-template-svg-ellipse.status-true {
+    stroke-width: 0;
+    stroke: #00000000;
+    fill: #51D777;
+}
+
+/* Overwrite default columns and rows */
+.TcHmi_Controls_TcHmiExtendedControls_StatusIndicator-Template.label-right-elem {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: none 1fr none;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_StatusIndicator-Template.label-top-elem {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_StatusIndicator-Template.label-bottom-elem {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr auto;
+}
+
+
+/* If the main use for this control is interaction
+    uncomment the following lines to give user feedback:
+    This overlays the whole control with a white color
+    and changes the mouse cursor */
+
+/*
+.TcHmi_Controls_TcHmiExtendedControls_StatusIndicator.TcHmi_Controls_System_TcHmiControl-operate-disallowed::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 100;
+    cursor: not-allowed;
+}
+*/

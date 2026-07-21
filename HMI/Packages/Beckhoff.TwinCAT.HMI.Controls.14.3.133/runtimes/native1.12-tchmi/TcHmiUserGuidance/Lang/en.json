@@ -1,0 +1,11 @@
+{
+    "$schema": "../../.hmiframework/Schema/LocalizationDescription.Schema.json",
+    "locale": "en",
+    "localizedText": {
+        "Cancel": "Cancel",
+        "Next": "Next >",
+        "Finish": "Finish",
+        "Back": "< Previous",
+        "UserGuidanceFinished": "The user guidance is finished!"
+    }
+}

@@ -1,0 +1,384 @@
+{
+  "$schema": "../.hmiframework/Schema/ControlDescription.Schema.json",
+  "apiVersion": 1,
+  "name": "RadialGauge",
+  "namespace": "TcHmi.Controls.TcHmiExtendedControls",
+  "displayName": "Radial Gauge",
+  "version": {
+    "full": "1.0.0.0",
+    "major": 1,
+    "minor": 0,
+    "revision": 0,
+    "build": 0
+  },
+  "visible": true,
+  "themeable": "Standard",
+  "base": "TcHmi.Controls.System.TcHmiControl",
+  "description": "A simple radial gauge.",
+  "properties": {
+    "containerControl": false,
+    "geometry": {
+      "width": 200,
+      "height": 100
+    }
+  },
+  "icons": [
+    {
+      "name": "Icons/16x16.png",
+      "width": 16,
+      "height": 16
+    }
+  ],
+  "template": "Template.html",
+  "dependencyFiles": [
+    {
+      "name": "RadialGauge.js",
+      "type": "JavaScript",
+      "description": "Contains all the main logic."
+    },
+    {
+      "name": "Style.css",
+      "type": "Stylesheet",
+      "description": "Theme independent style"
+    }
+  ],
+  "themes": {
+    "Base": {
+      "resources": [
+        {
+          "name": "Themes/Base/Style.css",
+          "type": "Stylesheet",
+          "description": "Theme dependent style"
+        }
+      ]
+    },
+    "Base-Dark": {
+      "resources": [
+        {
+          "name": "Themes/Base-Dark/Style.css",
+          "type": "Stylesheet",
+          "description": "Theme dependent style"
+        }
+      ]
+    }
+  },
+  "attributes": [
+    {
+      "name": "data-tchmi-value",
+      "propertyName": "Value",
+      "propertySetterName": "setValue",
+      "propertyGetterName": "getValue",
+      "displayName": "Value",
+      "visible": true,
+      "themeable": "Standard",
+      "displayPriority": 10,
+      "type": "tchmi:general#/definitions/Number",
+      "category": "Common",
+      "description": "",
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "defaultValue": null,
+      "defaultValueInternal": 0
+    },
+    {
+      "name": "data-tchmi-min-value",
+      "propertyName": "MinValue",
+      "propertySetterName": "setMinValue",
+      "propertyGetterName": "getMinValue",
+      "displayName": "MinValue",
+      "visible": true,
+      "themeable": "Standard",
+      "displayPriority": 10,
+      "type": "tchmi:general#/definitions/Number",
+      "category": "Common",
+      "description": "Minimum value allowed.",
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "defaultValue": 0,
+      "defaultValueInternal": 0
+    },
+    {
+      "name": "data-tchmi-max-value",
+      "propertyName": "MaxValue",
+      "propertySetterName": "setMaxValue",
+      "propertyGetterName": "getMaxValue",
+      "displayName": "MaxValue",
+      "visible": true,
+      "themeable": "Standard",
+      "displayPriority": 10,
+      "type": "tchmi:general#/definitions/Number",
+      "category": "Common",
+      "description": "Maximum value allowed.",
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "defaultValue": 100,
+      "defaultValueInternal": 100
+    },
+    {
+      "name": "data-tchmi-text-color",
+      "propertyName": "TextColor",
+      "propertySetterName": "setTextColor",
+      "propertyGetterName": "getTextColor",
+      "displayName": "TextColor",
+      "visible": true,
+      "themeable": "Standard",
+      "displayPriority": 10,
+      "type": "tchmi:framework#/definitions/SolidColor",
+      "category": "Colors",
+      "description": "The color of the text",
+      "readOnly": false,
+      "bindable": true,
+      "defaultBindingMode": "OneWay",
+      "heritable": true,
+      "allowSymbolExpressionsInObject": true,
+      "defaultValue": null,
+      "defaultValueInternal": null
+    },
+    {
+      "name": "data-tchmi-unit",
+      "propertyName": "Unit",
+      "propertySetterName": "setUnit",
+      "propertyGetterName": "getUnit",
+      "displayName": "Unit",
+      "visible": true,
+      "themeable": "Standard",
+      "displayPriority": 10,
+      "type": "tchmi:general#/definitions/String",
+      "category": "Common",
+      "description": "Set optional unit to display with value.",
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "defaultValue": null,
+      "defaultValueInternal": ""
+    },
+    {
+      "name": "data-tchmi-show-value",
+      "propertyName": "ShowValue",
+      "propertySetterName": "setShowValue",
+      "propertyGetterName": "getShowValue",
+      "displayName": "ShowValue",
+      "visible": true,
+      "themeable": "Standard",
+      "displayPriority": 10,
+      "type": "tchmi:general#/definitions/Boolean",
+      "category": "Common",
+      "description": "Set to display the value as text under the gauge.",
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "defaultValue": null,
+      "defaultValueInternal": false
+    },
+    {
+      "name": "data-tchmi-value-font-size",
+      "propertyName": "ValueFontSize",
+      "propertySetterName": "setValueFontSize",
+      "propertyGetterName": "getValueFontSize",
+      "displayName": "ValueFontSize",
+      "visible": true,
+      "themeable": "Standard",
+      "displayPriority": 70,
+      "type": "tchmi:framework#/definitions/MeasurementValue",
+      "category": "Appearance",
+      "description": "The size of the font. Percent values are relative to the parent elements font size.",
+      "readOnly": false,
+      "bindable": true,
+      "defaultBindingMode": "OneWay",
+      "heritable": true,
+      "defaultValue": null,
+      "defaultValueInternal": 200
+    },
+    {
+      "name": "data-tchmi-value-font-size-unit",
+      "propertyName": "ValueFontSizeUnit",
+      "propertySetterName": "setValueFontSizeUnit",
+      "propertyGetterName": "getValueFontSizeUnit",
+      "refTo": "ValueFontSize",
+      "displayName": "ValueFontSizeUnit",
+      "visible": true,
+      "themeable": "Advanced",
+      "displayPriority": 70,
+      "type": "tchmi:framework#/definitions/MeasurementUnit",
+      "category": "Appearance",
+      "description": "Could be 'px' or for relative sizing '%'.",
+      "readOnly": false,
+      "bindable": true,
+      "defaultBindingMode": "OneWay",
+      "heritable": true,
+      "defaultValue": null,
+      "defaultValueInternal": "%"
+    },
+    {
+      "name": "data-tchmi-range-colors",
+      "propertyName": "RangeColors",
+      "propertySetterName": "setRangeColors",
+      "propertyGetterName": "getRangeColors",
+      "displayName": "RangeColors",
+      "visible": true,
+      "themeable": "Standard",
+      "displayPriority": 40,
+      "type": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.GaugeRangeDefinitionList",
+      "category": "Common",
+      "description": "The range colors of the gauge",
+      "readOnly": false,
+      "bindable": true,
+      "defaultBindingMode": "OneWay",
+      "heritable": true,
+      "allowSymbolExpressionsInObject": true,
+      "defaultValue": [
+        {
+          "color": null,
+          "start": 0,
+          "end": 100
+        }
+      ],
+      "defaultValueInternal": [
+        {
+          "color": null,
+          "start": 0,
+          "end": 100
+        }
+      ]
+    },
+    {
+      "name": "data-tchmi-show-min-max",
+      "propertyName": "ShowMinMax",
+      "propertySetterName": "setShowMinMax",
+      "propertyGetterName": "getShowMinMax",
+      "displayName": "ShowMinMax",
+      "visible": true,
+      "themeable": "Standard",
+      "displayPriority": 10,
+      "type": "tchmi:general#/definitions/Boolean",
+      "category": "Common",
+      "description": "Set to display the min and max values as text by the gauge.",
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "defaultValue": null,
+      "defaultValueInternal": false
+    },
+    {
+      "name": "data-tchmi-min-max-font-size",
+      "propertyName": "MinMaxFontSize",
+      "propertySetterName": "setMinMaxFontSize",
+      "propertyGetterName": "getMinMaxFontSize",
+      "displayName": "MinMaxFontSize",
+      "visible": true,
+      "themeable": "Standard",
+      "displayPriority": 70,
+      "type": "tchmi:framework#/definitions/MeasurementValue",
+      "category": "Appearance",
+      "description": "The size of the font. Percent values are relative to the parent elements font size.",
+      "readOnly": false,
+      "bindable": true,
+      "defaultBindingMode": "OneWay",
+      "heritable": true,
+      "defaultValue": null,
+      "defaultValueInternal": null
+    },
+    {
+      "name": "data-tchmi-min-max-font-size-unit",
+      "propertyName": "MinMaxFontSizeUnit",
+      "propertySetterName": "setMinMaxFontSizeUnit",
+      "propertyGetterName": "getMinMaxFontSizeUnit",
+      "refTo": "MinMaxFontSize",
+      "displayName": "MinMaxFontSizeUnit",
+      "visible": true,
+      "themeable": "Advanced",
+      "displayPriority": 70,
+      "type": "tchmi:framework#/definitions/MeasurementUnit",
+      "category": "Appearance",
+      "description": "Could be 'px' or for relative sizing '%'.",
+      "readOnly": false,
+      "bindable": true,
+      "defaultBindingMode": "OneWay",
+      "heritable": true,
+      "defaultValue": null,
+      "defaultValueInternal": "px"
+    },
+    {
+      "name": "data-tchmi-gauge-width",
+      "propertyName": "GaugeWidth",
+      "propertySetterName": "setGaugeWidth",
+      "propertyGetterName": "getGaugeWidth",
+      "displayName": "GaugeWidth",
+      "visible": true,
+      "themeable": "Standard",
+      "displayPriority": 10,
+      "type": "tchmi:general#/definitions/Number",
+      "category": "Appearance",
+      "description": "Set the width of the gauge bar.",
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "defaultValue": null,
+      "defaultValueInternal": 15
+    },
+    {
+      "name": "data-tchmi-round-gauge",
+      "propertyName": "RoundGauge",
+      "propertySetterName": "setRoundGauge",
+      "propertyGetterName": "getRoundGauge",
+      "displayName": "RoundGauge",
+      "visible": true,
+      "themeable": "Standard",
+      "displayPriority": 10,
+      "type": "tchmi:general#/definitions/Boolean",
+      "category": "Appearance",
+      "description": "Set to round the ends of the gauge bars.",
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "defaultValue": null,
+      "defaultValueInternal": true
+    },
+    {
+      "name": "data-tchmi-background-bar-color",
+      "propertyName": "BackgroundBarColor",
+      "propertySetterName": "setBackgroundBarColor",
+      "propertyGetterName": "getBackgroundBarColor",
+      "displayName": "BackgroundBarColor",
+      "visible": true,
+      "themeable": "Standard",
+      "displayPriority": 10,
+      "type": "tchmi:framework#/definitions/SolidColor",
+      "category": "Common",
+      "description": "The color of the background bar.",
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "defaultValue": null,
+      "defaultValueInternal": null
+    }
+  ],
+  "attributeCategories": [
+    {
+      "name": "Appearance",
+      "defaultCollapsed": true,
+      "displayPriority": 500,
+      "description": "Attributes defining the appearance of the gauge."
+    }
+  ],
+  "functions": [],
+  "events": [
+    {
+      "name": ".onValueChanged",
+      "displayName": ".onValueChanged",
+      "visible": true,
+      "displayPriority": 10,
+      "category": "Control",
+      "description": "The valuechanged event is fired when the value was changed.",
+      "heritable": true
+    }
+  ],
+  "dataTypes": [
+    {
+      "schema": "Schema/Types.Schema.json"
+    }
+  ]
+}

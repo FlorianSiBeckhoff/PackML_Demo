@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en" class="tchmi-html-designer">
+<head>
+  <meta charset="utf-8">
+  <title>Please enter your Title...</title>
+  <meta name="tchmi-buildtime" content="2026-07-21T09:15:07">
+
+  <!-- target-densitydpi=device-dpi -->
+  <meta name="viewport" content="initial-scale=1.0"><script>
+	 TCHMI_CONSOLE_LOG_LEVEL  = 2;
+	 TCHMI_CONSOLE_LOG_TCHMISERVER_MESSAGES  = false;
+	 TCHMI_CONSOLE_LOG_ENGINEERING_COM_MESSAGES  = false;
+	 TCHMI_CURRENT_CONTROL_THEME  = "Base-Dark";
+</script><script>
+	TCHMI_TARGET_PARTIAL = new URL(window.location.href).searchParams.get('TargetPartial') ?? undefined;
+</script><script>TCHMI_NUGET_METADATA = {
+  "Beckhoff.TwinCAT.HMI.BaseTemplate": {
+    "version": "14.4.5",
+    "authors": "Beckhoff",
+    "title": "BaseTemplate",
+    "description": "TwinCAT HMI is a development environment for web-based HMIs (Human Machine Interfaces). This package provides controls for TwinCAT HMI project templates."
+  },
+  "Beckhoff.TwinCAT.HMI.Controls": {
+    "version": "14.6.28",
+    "authors": "Beckhoff",
+    "title": "Controls",
+    "description": "TwinCAT HMI is a development environment for web-based HMIs (Human Machine Interfaces). This package provides the controls for the TwinCAT HMI client."
+  },
+  "Beckhoff.TwinCAT.HMI.EcDiagnostics": {
+    "version": "23.0.275",
+    "authors": "",
+    "title": "",
+    "description": ""
+  },
+  "Beckhoff.TwinCAT.HMI.EcDiagnosticsControl": {
+    "version": "14.4.4",
+    "authors": "Beckhoff",
+    "title": "EcDiagnosticsControl",
+    "description": "TwinCAT HMI is a development environment for web-based HMIs (Human Machine Interfaces). This package provides a control for fieldbus diagnostics of EtherCAT topologies in TwinCAT HMI applications."
+  },
+  "Beckhoff.TwinCAT.HMI.EventLogger": {
+    "version": "23.0.275",
+    "authors": "",
+    "title": "",
+    "description": ""
+  },
+  "Beckhoff.TwinCAT.HMI.Framework": {
+    "version": "14.4.70",
+    "authors": "Beckhoff",
+    "title": "Framework",
+    "description": "TwinCAT HMI is a development environment for web-based HMIs (Human Machine Interfaces). This package provides the client framework for the TwinCAT HMI."
+  },
+  "Beckhoff.TwinCAT.HMI.Functions": {
+    "version": "14.4.4",
+    "authors": "Beckhoff",
+    "title": "Functions",
+    "description": "TwinCAT HMI is a development environment for web-based HMIs (Human Machine Interfaces). This package provides functions for use in the \"Actions and Conditions Editor\" and symbol expressions."
+  },
+  "Beckhoff.TwinCAT.HMI.Mdp": {
+    "version": "23.0.275",
+    "authors": "",
+    "title": "",
+    "description": ""
+  },
+  "Beckhoff.TwinCAT.HMI.PackML": {
+    "version": "14.4.5",
+    "authors": "Beckhoff",
+    "title": "PackML",
+    "description": "TwinCAT HMI is a development environment for web-based HMIs (Human Machine Interfaces). This package provides a control to display and interact with the PackML Machine State Model."
+  },
+  "Beckhoff.TwinCAT.HMI.RecipeManagement": {
+    "version": "23.0.275",
+    "authors": "",
+    "title": "",
+    "description": ""
+  },
+  "Beckhoff.TwinCAT.HMI.Server.Engineering": {
+    "version": "23.0.279",
+    "authors": "",
+    "title": "",
+    "description": ""
+  },
+  "Beckhoff.TwinCAT.HMI.SqliteHistorize": {
+    "version": "23.0.275",
+    "authors": "",
+    "title": "",
+    "description": ""
+  },
+  "Microsoft.TypeScript.MSBuild": {
+    "version": "5.9.3",
+    "authors": "",
+    "title": "",
+    "description": ""
+  },
+  "TcHmiExtendedControls": {
+    "version": "1.2.0",
+    "authors": "SPT",
+    "title": "TcHmiExtendedControls",
+    "description": "Basic controls and functions which extend or complement existing TcHmi controls and functions."
+  },
+  "TcHmiToastNotification": {
+    "version": "1.0.2",
+    "authors": "SPT",
+    "title": "Toast Notification",
+    "description": "Functions for Toast style notifications in TwinCAT HMI."
+  }
+};
+</script>
+
+  <script>
+		TCHMI_ENGINEERING = true;
+		TCHMI_DESIGNER = true;
+		TCHMI_CONFIG_OVERRIDE = {
+			"basePath": "Beckhoff.TwinCAT.HMI.Framework",
+			"tcHmiServer": {
+				"websocketOverwrite": {
+					"host": "127.0.0.1",
+					"port": 3009
+				},
+				"websocketIntervalTime": 200
+			}
+		};
+
+   	    window.onload = function load() {
+			if ((!('TcHmi' in window) || !window.TcHmi.System) && document.body) {
+				document.body.style.background = '#C8C8C8';
+				document.body.innerHTML = 'TwinCAT HMI Framework could not be loaded.';
+			}
+			window.onload = null;
+		};
+  </script>
+  <script type="importmap">
+{
+  "imports": {
+    "Beckhoff.TwinCAT.HMI.BaseTemplate/": "./Beckhoff.TwinCAT.HMI.BaseTemplate/",
+    "Beckhoff.TwinCAT.HMI.BaseTemplate": "./Beckhoff.TwinCAT.HMI.BaseTemplate/index.esm.js",
+    "Beckhoff.TwinCAT.HMI.Controls/": "./Beckhoff.TwinCAT.HMI.Controls/",
+    "Beckhoff.TwinCAT.HMI.Controls": "./Beckhoff.TwinCAT.HMI.Controls/index.esm.js",
+    "Beckhoff.TwinCAT.HMI.EcDiagnosticsControl/": "./Beckhoff.TwinCAT.HMI.EcDiagnosticsControl/",
+    "Beckhoff.TwinCAT.HMI.EcDiagnosticsControl": "./Beckhoff.TwinCAT.HMI.EcDiagnosticsControl/index.esm.js",
+    "Beckhoff.TwinCAT.HMI.Framework/": "./Beckhoff.TwinCAT.HMI.Framework/",
+    "Beckhoff.TwinCAT.HMI.Framework": "./Beckhoff.TwinCAT.HMI.Framework/index.esm.js",
+    "Beckhoff.TwinCAT.HMI.Functions/": "./Beckhoff.TwinCAT.HMI.Functions/",
+    "Beckhoff.TwinCAT.HMI.Functions": "./Beckhoff.TwinCAT.HMI.Functions/index.esm.js",
+    "Beckhoff.TwinCAT.HMI.PackML/": "./Beckhoff.TwinCAT.HMI.PackML/",
+    "Beckhoff.TwinCAT.HMI.PackML": "./Beckhoff.TwinCAT.HMI.PackML/index.esm.js",
+    "TcHmiExtendedControls/": "./TcHmiExtendedControls/",
+    "TcHmiExtendedControls": "./TcHmiExtendedControls/index.esm.js",
+    "TcHmiToastNotification/": "./TcHmiToastNotification/",
+    "TcHmiToastNotification": "./TcHmiToastNotification/index.esm.js"
+  },
+  "scopes": {}
+}
+</script>
+
+<script src="/Beckhoff.TwinCAT.HMI.Framework/Lib/tslib.js" defer=""></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/Lib/EsHelper.js" defer=""></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/Lib/jquery.min.js" defer=""></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/Lib/acorn.js" defer=""></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/dist/Main.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/dist/Controls/System/TcHmiControl/TcHmiControl.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/dist/index/TcHmi.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/dist/Controls/System/TcHmiContainerControl/TcHmiContainerControl.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/dist/Controls/System/TcHmiPartial/TcHmiPartial.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/dist/Controls/System/TcHmiPopup/TcHmiPopup.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/dist/Controls/System/TcHmiContainer/TcHmiContainer.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/dist/Controls/System/TcHmiContent/TcHmiContent.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/dist/Controls/System/TcHmiGrid/TcHmiGrid.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/dist/Controls/System/TcHmiGridContainer/TcHmiGridContainer.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/dist/Controls/System/TcHmiFlexContainer/TcHmiFlexContainer.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/dist/Controls/System/TcHmiHtmlHost/TcHmiHtmlHost.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/dist/Controls/System/TcHmiUserControl/TcHmiUserControl.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/dist/Controls/System/TcHmiView/TcHmiView.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/dist/Controls/System/TcHmiRegion/TcHmiRegion.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/dist/Controls/System/TcHmiUserControlHost/TcHmiUserControlHost.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiEventGrid/EventClassesProvider/EventClassesProvider.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiAccordionRegion/TcHmiAccordionRegion.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiAdsState/TcHmiAdsState.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiAudio/TcHmiAudio.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiButton/TcHmiButton.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiBarChart/TcHmiBarChart.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiCalculator/TcHmiCalculator.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/TcHmiCalculator/Lib/math.js" defer=""></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiCheckbox/TcHmiCheckbox.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiCombobox/TcHmiCombobox.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiDatagrid/TcHmiDatagrid.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiDateTimeDisplay/TcHmiDateTimeDisplay.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiDateTimeInput/TcHmiDateTimeInput.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiDateInput/TcHmiDateInput.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiDatePicker/TcHmiDatePicker.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiDateTimePicker/TcHmiDateTimePicker.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiEllipse/TcHmiEllipse.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiEventGrid/TcHmiEventGrid.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiEventLine/TcHmiEventLine.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiFileExplorer/TcHmiFileExplorer.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiHorizontalBarChart/TcHmiHorizontalBarChart.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiIFrame/TcHmiIFrame.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiImage/TcHmiImage.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiInput/TcHmiInput.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/UiProvider/loader.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiKeyboard/TcHmiKeyboard.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiPieChart/TcHmiPieChart.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiLine/TcHmiLine.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiLinearGauge/TcHmiLinearGauge.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiLineChart/TcHmiLineChart.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiLoadingSpinner/TcHmiLoadingSpinner.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiLocalizationSelect/TcHmiLocalizationSelect.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiMultiState/TcHmiMultiState.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiNumericInput/TcHmiNumericInput.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiObjectBrowser/TcHmiObjectBrowser.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiPasswordInput/TcHmiPasswordInput.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiPermissionManagement/TcHmiPermissionManagement.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiPolygon/TcHmiPolygon.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiPolyline/TcHmiPolyline.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiProgressBar/TcHmiProgressBar.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiRadialGauge/TcHmiRadialGauge.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiRadioButton/TcHmiRadioButton.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiRecipeEdit/TcHmiRecipeEdit.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiRecipeSelect/TcHmiRecipeSelect.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiRectangle/TcHmiRectangle.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiSparkline/TcHmiSparkline.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiSpinboxInput/TcHmiSpinboxInput.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiStateImage/TcHmiStateImage.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiTabNavigation/TcHmiTabNavigation.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiTachometer/TcHmiTachometer.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiTextblock/TcHmiTextblock.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiTextbox/TcHmiTextbox.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiThemeSelect/TcHmiThemeSelect.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiThermometer/TcHmiThermometer.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiTimespanInput/TcHmiTimespanInput.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiTimespanPicker/TcHmiTimespanPicker.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiToggleButton/TcHmiToggleButton.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiToggleSwitch/TcHmiToggleSwitch.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiTreeView/TcHmiTreeView.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiTrendLineChart/TcHmiTrendLineChart.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiTrendSparkline/TcHmiTrendSparkline.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiUserGuidance/TcHmiUserGuidance.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiUserManagement/TcHmiUserManagement.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiVideo/TcHmiVideo.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.BaseTemplate/dist/TcHmiAccordionNavigation/TcHmiAccordionNavigation.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.BaseTemplate/dist/TcHmiBreadcrumb/TcHmiBreadcrumb.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.BaseTemplate/dist/TcHmiBurgerMenu/TcHmiBurgerMenu.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.BaseTemplate/dist/TcHmiHeader/TcHmiHeader.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.BaseTemplate/dist/TcHmiNavigation/TcHmiNavigation.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.BaseTemplate/dist/TcHmiResponsiveBehaviour/TcHmiResponsiveBehaviour.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.EcDiagnosticsControl/dist/TcHmiEcDiagnostics/TcHmiEcDiagnostics.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/ActivateRecipe.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/BigIntToNumber.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/CheckAccess.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/CheckBinding.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/CheckBindingEx.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/Concatenate.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/ConvertBooleanToEnum.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/ConvertBooleanToVisibility.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/CreateAuditLogEntry.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/CreateBinding.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/Decrement.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/DownloadRecipes.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/DownloadRecipeTypes.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/EnumToString.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/EnumToMemberName.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/ExportEvents.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/ForceLogout.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/ForceLogoutEx.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/FormatString.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/GaugeValueFormatter.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/GetAutoOpenSystemKeyboard.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/GetElementByIndex.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/GetLocale.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/GetLocalizedText.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/GetRegisteredLocales.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/GetTheme.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/GoToLoginPage.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/Increment.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/IsSafeInteger.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/LineChartTooltipFormatter.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/Log.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/Login.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/LoginEx.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/Logout.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/LogoutEx.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/NumberToBigInt.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/NumberToSolidColor.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/RemoveBinding.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/SetAttributeToThemeValue.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/SetAutoOpenSystemKeyboard.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/SetElementByIndex.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/SetLocaleEx.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/SetLocale.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/SetTheme.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/StartInterval.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/StopInterval.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/SymbolExists.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/TeachAsNewRecipe.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/Wait.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/TcUiClientIsAvailable.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/TcUiClientScreenshot.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/TcUiClientKiosk.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/TeachRecipe.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/ToDateString.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/ToDateTimeString.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/ToLowerCase.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/ToTimeString.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/ToUpperCase.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/TrimToLength.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/UploadRecipeFiles.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.PackML/dist/TcHmiStateMachineV2/TcHmiStateMachineV2.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.PackML/dist/TcHmiStateMachineV3/TcHmiStateMachineV3.esm.js" type="module"></script>
+<script src="/TcHmiExtendedControls/Global/GlobalSrc.js" type="module"></script>
+<script src="/TcHmiExtendedControls/LabeledInput/LabeledInput.js" type="module"></script>
+<script src="/TcHmiExtendedControls/LinearGauge/LinearGauge.js" type="module"></script>
+<script src="/TcHmiExtendedControls/RangeSlider/RangeSlider.js" type="module"></script>
+<script src="/TcHmiExtendedControls/EnumToString/EnumToString.js" type="module"></script>
+<script src="/TcHmiExtendedControls/StatusIndicator/StatusIndicator.js" type="module"></script>
+<script src="/TcHmiExtendedControls/EnumRadioButton/EnumRadioButton.js" type="module"></script>
+<script src="/TcHmiExtendedControls/RadialGauge/RadialGauge.js" type="module"></script>
+<script src="/TcHmiExtendedControls/MultiselectCombobox/MultiselectCombobox.js" type="module"></script>
+<script src="/TcHmiExtendedControls/LabeledNumericInput/LabeledNumericInput.js" type="module"></script>
+<script src="/TcHmiExtendedControls/ConfirmationButton/ConfirmationButton.js" type="module"></script>
+<script src="/TcHmiExtendedControls/Blink/Blink.js" type="module"></script>
+<script src="/TcHmiExtendedControls/DataDisplayTile/DataDisplayTile.js" type="module"></script>
+<script src="/TcHmiExtendedControls/DetailedNumpad/DetailedNumpad.js" type="module"></script>
+<script src="/TcHmiExtendedControls/DatagridRowStyling/DatagridRowStyling.js" type="module"></script>
+<script src="/TcHmiExtendedControls/UseSystemTheme/UseSystemTheme.js" type="module"></script>
+<script src="/TcHmiToastNotification/ToastNotification/ToastNotification.js" defer=""></script>
+<script src="/TcHmiToastNotification/Lib/notyf.min.js" defer=""></script>
+<script src="/TcHmiToastNotification/ToastNotification/OpenToast.js" defer=""></script>
+<script src="/TcHmiToastNotification/ToastNotification/EventToast.js" defer=""></script>
+<script src="/Functions/GetModeName.js" defer=""></script>
+<script src="/Functions/BuildManualPage.js" defer=""></script>
+<script src="/Functions/DisplayPermissiveText.js" defer=""></script>
+</head>
+<body class="tchmi-body-designer">
+	<div id="Desktop" data-tchmi-type="TcHmi.Controls.System.TcHmiView" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width-mode="Value" data-tchmi-min-width="100" data-tchmi-min-width-unit="%" data-tchmi-height-mode="Value" data-tchmi-min-height="100" data-tchmi-min-height-unit="%" data-tchmi-creator-viewport-width="1920" data-tchmi-right="0" data-tchmi-bottom="0" data-tchmi-creator-viewport-height="1080" data-tchmi-creator-locked="True" data-tchmi-creator-partial-key="/Desktop.view">
+<div id="desktop-popup-settings" data-tchmi-type="TcHmi.Controls.System.TcHmiPopup" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-header-text="%l%Settings%/l%" data-tchmi-modal="true" data-tchmi-creator-visibility="Collapsed" data-tchmi-right="0" data-tchmi-bottom="0" data-tchmi-max-width="820" data-tchmi-max-height="450">
+
+<script data-tchmi-target-attribute="data-tchmi-target-file" type="application/json">
+{
+  "path": "Popups/Settings.content"
+}
+</script>
+
+
+</div>
+<div id="desktop-grid-machinecontrol" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-height="42" data-tchmi-height-unit="%" data-tchmi-top="%f%%ctrl%Desktop::RenderedHeight%/ctrl%/2-%ctrl%desktop-grid-machinecontrol::RenderedHeight%/ctrl%/2%/f%" data-tchmi-top-unit="px" data-tchmi-right="0" data-tchmi-width-mode="Content" data-tchmi-zindex="3" data-tchmi-creator-locked="True">
+
+<script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
+[
+  {
+    "overflow": false,
+    "width": 35.0,
+    "widthMode": "Value",
+    "widthUnit": "px"
+  },
+  {
+    "width": "%f%%ctrl%desktop-grid-machinecontrol::RenderedHeight%/ctrl%*0.4%/f%",
+    "widthMode": "Value",
+    "widthUnit": "px"
+  }
+]
+</script>
+<div data-tchmi-grid-row-index="0" data-tchmi-grid-column-index="1" id="desktop-uc-pmlcontrol" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-left="2" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControls/PackMLControl.usercontrol" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-right="0" data-tchmi-bottom="10" data-tchmi-bottom-unit="px" data-tchmi-width="%f%%ctrl%desktop-grid-machinecontrol::RenderedHeight%/ctrl%*0.4-12%/f%" data-tchmi-statemachinehmi="%s%ADS.PLC1.MAIN.Machine_HMI.Statemachine_HMI%/s%">
+
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "interaction"
+]
+</script>
+</div>
+
+
+
+
+<div id="desktop-gird-showhidebtn" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-right="0" data-tchmi-bottom="0">
+
+<script data-tchmi-target-attribute="data-tchmi-row-options" type="application/json">
+[
+  {
+    "height": 1,
+    "heightMode": "Value",
+    "heightUnit": "factor",
+    "overflow": false
+  },
+  {
+    "height": 125.0,
+    "heightMode": "Value",
+    "heightUnit": "px"
+  },
+  {
+    "height": 1,
+    "heightMode": "Value",
+    "heightUnit": "factor"
+  }
+]
+</script>
+<div data-tchmi-grid-row-index="1" data-tchmi-grid-column-index="0" id="desktop-btn-showhide" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-right="0" data-tchmi-bottom="0" data-tchmi-src="Images/Icons/right.svg">
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "icon-button",
+  "icon-dark",
+  "interaction"
+]
+</script>
+
+
+
+
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onPressed",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:framework#/definitions/Path",
+                  "symbolExpression": "%ctrl%desktop-btn-showhide::Src%/ctrl%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Path",
+                  "value": "Images/Icons/left.svg"
+                },
+                "compareOperator": "==",
+                "logic": null
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%desktop-grid-machinecontrol::ClassNames%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/ClassNameList",
+                  "value": [
+                    "no-interaction",
+                    "slide-out"
+                  ]
+                },
+                "asyncWait": true
+              },
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%desktop-btn-showhide::Src%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Path",
+                  "value": "Images/Icons/right.svg"
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%desktop-grid-machinecontrol::ClassNames%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/ClassNameList",
+                  "value": [
+                    "no-interaction",
+                    "slide-in"
+                  ]
+                },
+                "asyncWait": true
+              },
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%desktop-btn-showhide::Src%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Path",
+                  "value": "Images/Icons/left.svg"
+                },
+                "asyncWait": true
+              }
+            ]
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
+  }
+]
+</script>
+</div>
+
+
+</div>
+
+
+
+
+
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "no-interaction"
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onAttached",
+    "actions": [
+      {
+        "objectType": "JavaScript",
+        "active": true,
+        "sourceLines": [
+          "const element = TcHmi.Controls.get('desktop-grid-machinecontrol');",
+          "const button = TcHmi.Controls.get('desktop-btn-showhide');",
+          "const grid = element.getElement()[0];",
+          "",
+          "let isDragging = false;",
+          "let hasMoved = false;",
+          "let offsetY = 0;",
+          "let startY = 0;",
+          "let pointerId = null;",
+          "let dragThreshold = 5;",
+          "",
+          "grid.addEventListener('dragstart', function(e) {",
+          "  e.preventDefault();",
+          "});",
+          "",
+          "grid.style.userSelect = 'none';",
+          "grid.style.webkitUserSelect = 'none';",
+          "",
+          "button.getElement()[0].addEventListener('pointerdown', function(e) {",
+          "  isDragging = true;",
+          "  hasMoved = false;",
+          "  pointerId = e.pointerId;",
+          "",
+          "  startY = e.clientY;",
+          "",
+          "  let rect = grid.getBoundingClientRect();",
+          "  offsetY = e.clientY - rect.top;",
+          "});",
+          "",
+          "// Use document-level pointermove to catch movement outside element",
+          "document.addEventListener('pointermove', function(e) {",
+          "  let isLocked = new TcHmi.Symbol('%i%machineControlLocked%/i%').read();",
+          "  if (isLocked) return;",
+          "  if (!isDragging || e.pointerId !== pointerId) return;",
+          "",
+          "  let deltaY = Math.abs(e.clientY - startY);",
+          "",
+          "  if (deltaY > dragThreshold) {",
+          "      if (!hasMoved) {",
+          "          // First time crossing threshold - capture pointer for touch",
+          "          if (e.pointerType === 'touch') {",
+          "              grid.setPointerCapture(e.pointerId);",
+          "          }",
+          "          hasMoved = true;",
+          "      }",
+          "",
+          "      e.preventDefault();",
+          "      e.stopPropagation();",
+          "",
+          "      let newTop = e.clientY - offsetY;",
+          "",
+          "      element.setTop(newTop);",
+          "  }",
+          "});",
+          "",
+          "document.addEventListener('pointerup', function(e) {",
+          "  if (!isDragging || e.pointerId !== pointerId) return;",
+          "",
+          "  if (hasMoved) {",
+          "      e.preventDefault();",
+          "      e.stopPropagation();",
+          "      e.stopImmediatePropagation();",
+          "",
+          "      if (e.pointerType === 'touch' && grid.hasPointerCapture(e.pointerId)) {",
+          "          grid.releasePointerCapture(e.pointerId);",
+          "      }",
+          "  }",
+          "",
+          "  isDragging = false;",
+          "  pointerId = null;",
+          "});",
+          "",
+          "grid.addEventListener('pointercancel', function(e) {",
+          "  isDragging = false;",
+          "  hasMoved = false;",
+          "  pointerId = null;",
+          "});",
+          "",
+          "grid.addEventListener('click', function(e) {                    \t",
+          "  if (hasMoved) {",
+          "      e.preventDefault();",
+          "      e.stopPropagation();",
+          "      e.stopImmediatePropagation();",
+          "",
+          "      setTimeout(function() {",
+          "          hasMoved = false;",
+          "      }, 10);",
+          "",
+          "      return false;",
+          "  }",
+          "}, true);"
+        ],
+        "asyncWait": true,
+        "waitMode": "Synchronous"
+      }
+    ]
+  },
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onResized",
+    "actions": [
+      {
+        "objectType": "JavaScript",
+        "active": true,
+        "sourceLines": [
+          "// sets CSS variable with current columns width of pml control",
+          "let element = document.getElementById('desktop-grid-machinecontrol');",
+          "",
+          "TcHmi.Symbol.readEx2('%ctrl%desktop-grid-machinecontrol::ColumnOptions[1]::width%/ctrl%', function(data) {",
+          "\telement.style.setProperty('--pmlcontrol-column-width', data.value + 'px');",
+          "});"
+        ],
+        "asyncWait": true,
+        "waitMode": "Synchronous"
+      }
+    ]
+  }
+]
+</script>
+</div>
+
+
+
+
+<div id="desktop-grid-main" data-tchmi-type="TcHmi.Controls.System.TcHmiGridContainer" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-right="0" data-tchmi-bottom="0">
+
+<script data-tchmi-target-attribute="data-tchmi-grid-layout" type="application/json">
+{
+  "gridTemplateColumns": "clamp(80px, 20%, 300px) 1fr",
+  "gridTemplateRows": "max(80px, 7%) 1fr"
+}
+</script>
+<div id="desktop-flex-header" data-tchmi-type="TcHmi.Controls.System.TcHmiFlexContainer" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="%">
+
+<script data-tchmi-target-attribute="data-tchmi-grid-item-layout" type="application/json">
+{
+  "gridColumn": "1 / 3",
+  "gridRow": "1"
+}
+</script>
+<div id="desktop-header" data-tchmi-type="TcHmi.Controls.BaseTemplate.TcHmiHeader" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-height="100" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-height-unit="%">
+<script data-tchmi-target-attribute="data-tchmi-header-items" type="application/json">
+[
+  {
+    "accessRights": [],
+    "altText": "Image",
+    "classList": [],
+    "image": "Images/Beckhoff_Logo.svg",
+    "itemAlign": "Left",
+    "itemType": "Image",
+    "minWidth": 128.0,
+    "minWidthUnit": "px",
+    "prefHeight": 95.0,
+    "prefHeightUnit": "px",
+    "prefWidth": 260.0,
+    "prefWidthUnit": "px",
+    "priority": "3"
+  },
+  {
+    "accessRights": [],
+    "classList": [],
+    "filter": [
+      {
+        "path": "domain",
+        "comparator": "==",
+        "value": "TcHmiEventLogger"
+      },
+      {
+        "logic": "AND"
+      },
+      {
+        "path": "alarmState",
+        "comparator": "==",
+        "value": 0
+      },
+      {
+        "logic": "AND"
+      },
+      {
+        "path": "severity",
+        "comparator": ">=",
+        "value": 0
+      }
+    ],
+    "itemAlign": "Right",
+    "itemType": "EventLine",
+    "messageFormat": [
+      {
+        "name": "timeRaised"
+      },
+      {
+        "text": " | "
+      },
+      {
+        "name": "params::sourceName"
+      },
+      {
+        "text": " | "
+      },
+      {
+        "name": "text"
+      }
+    ],
+    "minWidth": 288.0,
+    "minWidthUnit": "px",
+    "prefHeight": 48.0,
+    "prefHeightUnit": "px",
+    "prefWidth": 54.5,
+    "prefWidthUnit": "%",
+    "priority": "5",
+    "sorting": [
+      {
+        "name": "timeRaised",
+        "order": "Descending"
+      }
+    ],
+    "textOverflow": "Ellipsis"
+  },
+  {
+    "accessRights": [],
+    "allowLogout": true,
+    "allowSwitchUser": true,
+    "classList": [],
+    "itemAlign": "Right",
+    "itemType": "UserManagement",
+    "minWidth": 176.0,
+    "minWidthUnit": "px",
+    "prefHeight": 48.0,
+    "prefHeightUnit": "px",
+    "prefWidth": 288.0,
+    "prefWidthUnit": "px",
+    "priority": "3"
+  },
+  {
+    "accessRights": [],
+    "classList": [],
+    "itemAlign": "Right",
+    "itemType": "Time",
+    "minWidth": 150.0,
+    "minWidthUnit": "px",
+    "prefHeight": 48.0,
+    "prefHeightUnit": "px",
+    "prefWidth": 150.0,
+    "prefWidthUnit": "px",
+    "priority": "4",
+    "timeDisplayLayout": "TimeDateMultiLine"
+  }
+]
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script data-tchmi-target-attribute="data-tchmi-flex-item-layout" type="application/json">
+{
+  "flex": "1 1 auto"
+}
+</script>
+</div>
+<div id="desktop-settings-btn" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-src="Images/Icons/settings.svg" data-tchmi-height="100" data-tchmi-width="80" data-tchmi-height-unit="%">
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "grid-padding",
+  "icon-dark"
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-flex-item-layout" type="application/json">
+{
+  "alignSelf": "Center",
+  "flex": "0 0 auto"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onPressed",
+    "actions": [
+      {
+        "objectType": "ControlApiFunction",
+        "active": true,
+        "control": "desktop-popup-settings",
+        "fn": "open",
+        "asyncWait": true
+      }
+    ]
+  }
+]
+</script>
+</div>
+
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "main-header"
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-flex-layout" type="application/json">
+{
+  "justifyContent": "Space-Evenly"
+}
+</script>
+</div>
+<div id="desktop-region" data-tchmi-type="TcHmi.Controls.System.TcHmiRegion" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-scrolling="Yes" data-tchmi-scale-mode="None" data-tchmi-height-mode="Value" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-width-unit="%" data-tchmi-height-unit="%">
+
+<script data-tchmi-target-attribute="data-tchmi-grid-item-layout" type="application/json">
+{
+  "gridColumn": "2",
+  "gridRow": "2"
+}
+</script>
+</div>
+<div id="desktop-navigation" data-tchmi-type="TcHmi.Controls.BaseTemplate.TcHmiAccordionNavigation" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-target-region="%ctrl%desktop-region%/ctrl%" data-tchmi-close-when-clicked="true" data-tchmi-show-back-button="false" data-tchmi-height="100" data-tchmi-height-unit="%">
+<script data-tchmi-target-attribute="data-tchmi-navigation-items" type="application/json">
+[
+  {
+    "content": "Pages/Home.content",
+    "icon": "Images/Icons/home.svg",
+    "iconHeight": 48.0,
+    "iconHeightUnit": "px",
+    "iconWidth": 48.0,
+    "iconWidthUnit": "px",
+    "id": "Home",
+    "name": "%l%Home%/l%"
+  },
+  {
+    "content": "Pages/Manual.content",
+    "icon": "Images/Icons/manual.svg",
+    "iconHeight": 48.0,
+    "iconHeightUnit": "px",
+    "iconWidth": 48.0,
+    "iconWidthUnit": "px",
+    "id": "Manual",
+    "name": "%l%Manual%/l%"
+  },
+  {
+    "content": "Pages/Recipes.content",
+    "icon": "Images/Icons/recipes.svg",
+    "iconHeight": 48.0,
+    "iconHeightUnit": "px",
+    "iconWidth": 48.0,
+    "iconWidthUnit": "px",
+    "id": "Recipes",
+    "name": "%l%Recipes%/l%"
+  },
+  {
+    "content": "Pages/Events.content",
+    "icon": "Images/Icons/events.svg",
+    "iconHeight": 48.0,
+    "iconHeightUnit": "px",
+    "iconWidth": 48.0,
+    "iconWidthUnit": "px",
+    "id": "Events",
+    "name": "%l%Events%/l%"
+  },
+  {
+    "icon": "Images/Icons/diagnostics.svg",
+    "iconHeight": 48.0,
+    "iconHeightUnit": "px",
+    "iconWidth": 48.0,
+    "iconWidthUnit": "px",
+    "id": "Diagnostics",
+    "name": "%l%Diagnostics%/l%",
+    "subItems": [
+      {
+        "content": "Pages/Diagnostics/Trends.content",
+        "icon": "Images/Icons/trends.svg",
+        "iconHeight": 48.0,
+        "iconHeightUnit": "px",
+        "iconWidth": 48.0,
+        "iconWidthUnit": "px",
+        "id": "Trends",
+        "name": "%l%Trends%/l%"
+      },
+      {
+        "content": "Pages/Diagnostics/EtherCAT.content",
+        "icon": "Images/Icons/ethercat.svg",
+        "iconHeight": 48.0,
+        "iconHeightUnit": "px",
+        "iconWidth": 48.0,
+        "iconWidthUnit": "px",
+        "id": "EtherCAT",
+        "name": "%l%EtherCAT%/l%"
+      },
+      {
+        "content": "Pages/Diagnostics/System.content",
+        "icon": "Images/Icons/system-diag.svg",
+        "iconHeight": 48.0,
+        "iconHeightUnit": "px",
+        "iconWidth": 48.0,
+        "iconWidthUnit": "px",
+        "id": "System",
+        "name": "%l%System%/l%"
+      }
+    ]
+  }
+]
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "main-nav"
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-grid-item-layout" type="application/json">
+{
+  "gridColumn": "1",
+  "gridRow": "2"
+}
+</script>
+
+
+
+<script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
+{
+  "topLeft": 0.0,
+  "topRight": 0.0,
+  "bottomLeft": 0.0,
+  "bottomRight": 0.0,
+  "topLeftUnit": "px",
+  "topRightUnit": "px",
+  "bottomLeftUnit": "px",
+  "bottomRightUnit": "px"
+}
+</script>
+</div>
+
+<script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
+{
+  "topLeft": 0.0,
+  "topRight": 0.0,
+  "bottomLeft": 0.0,
+  "bottomRight": 0.0,
+  "topLeftUnit": "px",
+  "topRightUnit": "px",
+  "bottomLeftUnit": "px",
+  "bottomRightUnit": "px"
+}
+</script>
+</div>
+
+<script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
+{
+  "topLeft": 0.0,
+  "topRight": 0.0,
+  "bottomLeft": 0.0,
+  "bottomRight": 0.0,
+  "topLeftUnit": "px",
+  "topRightUnit": "px",
+  "bottomLeftUnit": "px",
+  "bottomRightUnit": "px"
+}
+</script>
+</div>
+</body>
+</html>

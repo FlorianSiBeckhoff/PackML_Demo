@@ -1,0 +1,125 @@
+<div id="Trends_1" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-width-unit="%" data-tchmi-height-unit="%" data-tchmi-creator-viewport-width="1536" data-tchmi-creator-viewport-height="1000" data-tchmi-creator-locked="True">
+<div id="trends-grid-main" data-tchmi-type="TcHmi.Controls.System.TcHmiGridContainer" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-right="10" data-tchmi-bottom="10">
+
+<script data-tchmi-target-attribute="data-tchmi-grid-layout" type="application/json">
+{
+  "columnGap": 10.0,
+  "gridTemplateColumns": "1fr",
+  "gridTemplateRows": "1fr 1fr",
+  "rowGap": 10.0
+}
+</script>
+<div id="trends-flex-chart1" data-tchmi-type="TcHmi.Controls.System.TcHmiFlexContainer" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-width-unit="%" data-tchmi-height-unit="%">
+
+<script data-tchmi-target-attribute="data-tchmi-grid-item-layout" type="application/json">
+{
+  "gridColumn": "1",
+  "gridRow": "1"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-flex-layout" type="application/json">
+{
+  "columnGap": 10.0,
+  "rowGap": 10.0
+}
+</script>
+<div id="trends-chart-data1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTrendLineChart" data-tchmi-end="Latest" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-start="First" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-x-axis-name="x-axis 1" data-tchmi-x-sub-tick-steps="4" data-tchmi-y-sub-tick-steps="4" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-height-unit="%">
+<script data-tchmi-target-attribute="data-tchmi-y-axis" type="application/json">
+[
+  {
+    "id": 1,
+    "showAxis": true,
+    "position": "Left",
+    "logarithmicScale": false,
+    "axisLabeling": "Number",
+    "labelFontColor": "%tr%Control::TcHmi.Controls.Beckhoff.TcHmiTrendLineChart::YAxisLabelFontColor%/tr%",
+    "showLabels": true,
+    "axisColor": "%tr%Control::TcHmi.Controls.Beckhoff.TcHmiTrendLineChart::YAxisAxisColor%/tr%",
+    "mainTickMinValue": 0,
+    "mainTickMaxValue": 100,
+    "showAxisName": true,
+    "axisName": "y-axis 1",
+    "axisNameFontFamily": null,
+    "axisNameFontSize": 15,
+    "axisNameFontSizeUnit": "px",
+    "axisNameFontWeight": "Bold",
+    "axisNameFontColor": "%tr%Control::TcHmi.Controls.Beckhoff.TcHmiTrendLineChart::YAxisAxisNameFontColor%/tr%",
+    "decimalPlaces": 2,
+    "autoScaling": false
+  }
+]
+</script>
+
+
+<script data-tchmi-target-attribute="data-tchmi-flex-item-layout" type="application/json">
+{
+  "flex": "1 1 auto"
+}
+</script>
+</div>
+
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "grouping-container"
+]
+</script>
+</div>
+<div id="trends-flex-chart2" data-tchmi-type="TcHmi.Controls.System.TcHmiFlexContainer" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="%">
+
+<script data-tchmi-target-attribute="data-tchmi-grid-item-layout" type="application/json">
+{
+  "gridColumn": "1",
+  "gridRow": "2"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-flex-layout" type="application/json">
+{
+  "columnGap": 10.0,
+  "rowGap": 10.0
+}
+</script>
+<div id="trends-chart-data2" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTrendLineChart" data-tchmi-end="Latest" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-start="First" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-x-axis-name="x-axis 1" data-tchmi-x-sub-tick-steps="4" data-tchmi-y-sub-tick-steps="4" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-height-unit="%">
+<script data-tchmi-target-attribute="data-tchmi-y-axis" type="application/json">
+[
+  {
+    "id": 1,
+    "showAxis": true,
+    "position": "Left",
+    "logarithmicScale": false,
+    "axisLabeling": "Number",
+    "labelFontColor": "%tr%Control::TcHmi.Controls.Beckhoff.TcHmiTrendLineChart::YAxisLabelFontColor%/tr%",
+    "showLabels": true,
+    "axisColor": "%tr%Control::TcHmi.Controls.Beckhoff.TcHmiTrendLineChart::YAxisAxisColor%/tr%",
+    "mainTickMinValue": 0,
+    "mainTickMaxValue": 100,
+    "showAxisName": true,
+    "axisName": "y-axis 1",
+    "axisNameFontFamily": null,
+    "axisNameFontSize": 15,
+    "axisNameFontSizeUnit": "px",
+    "axisNameFontWeight": "Bold",
+    "axisNameFontColor": "%tr%Control::TcHmi.Controls.Beckhoff.TcHmiTrendLineChart::YAxisAxisNameFontColor%/tr%",
+    "decimalPlaces": 2,
+    "autoScaling": false
+  }
+]
+</script>
+
+
+<script data-tchmi-target-attribute="data-tchmi-flex-item-layout" type="application/json">
+{
+  "flex": "1 1 auto"
+}
+</script>
+</div>
+
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "grouping-container"
+]
+</script>
+</div>
+</div>
+</div>

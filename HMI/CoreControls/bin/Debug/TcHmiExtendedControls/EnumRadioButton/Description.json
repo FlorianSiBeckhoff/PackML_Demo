@@ -1,0 +1,113 @@
+{
+  "$schema": "../.hmiframework/Schema/ControlDescription.Schema.json",
+  "apiVersion": 1,
+  "name": "EnumRadioButton",
+  "namespace": "TcHmi.Controls.TcHmiExtendedControls",
+  "displayName": "Enum Radio Button",
+  "version": {
+    "full": "1.0.0.0",
+    "major": 1,
+    "minor": 0,
+    "revision": 0,
+    "build": 0
+  },
+  "visible": true,
+  "themeable": "Standard",
+  "base": "TcHmi.Controls.Beckhoff.TcHmiRadioButton",
+  "description": "An extended Radio Button for easy use with Enumerations.",
+  "properties": {
+    "containerControl": false,
+    "geometry": {
+      "width": 100,
+      "height": 26
+    }
+  },
+  "icons": [
+    {
+      "name": "Icons/16x16.png",
+      "width": 16,
+      "height": 16
+    }
+  ],
+  "template": "Template.html",
+  "dependencyFiles": [
+    {
+      "name": "EnumRadioButton.js",
+      "type": "JavaScript",
+      "description": "Contains all the main logic."
+    },
+    {
+      "name": "Style.css",
+      "type": "Stylesheet",
+      "description": "Theme independent style"
+    }
+  ],
+  "themes": {
+    "Base": {
+      "resources": [
+        {
+          "name": "Themes/Base/Style.css",
+          "type": "Stylesheet",
+          "description": "Theme dependent style"
+        }
+      ]
+    },
+    "Base-Dark": {
+      "resources": [
+        {
+          "name": "Themes/Base-Dark/Style.css",
+          "type": "Stylesheet",
+          "description": "Theme dependent style"
+        }
+      ]
+    }
+  },
+  "attributes": [
+    {
+      "name": "data-tchmi-enum-data-symbol",
+      "propertyName": "EnumDataSymbol",
+      "propertySetterName": "setEnumDataSymbol",
+      "propertyGetterName": "getEnumDataSymbol",
+      "displayName": "EnumDataSymbol",
+      "visible": true,
+      "themeable": "None",
+      "displayPriority": 10,
+      "type": "tchmi:framework#/definitions/Symbol",
+      "category": "Common",
+      "description": "An enumeration which the radio buttons will read/write.",
+      "readOnly": false,
+      "bindable": true,
+      "defaultBindingMode": "TwoWay",
+      "heritable": true,
+      "allowEarlySymbolReferenceInjection": true,
+      "defaultValue": null,
+      "defaultValueInternal": null
+    },
+    {
+      "name": "data-tchmi-numeric-value",
+      "propertyName": "NumericValue",
+      "propertySetterName": "setNumericValue",
+      "propertyGetterName": "getNumericValue",
+      "displayName": "NumericValue",
+      "visible": true,
+      "themeable": "Standard",
+      "displayPriority": 10,
+      "type": "tchmi:general#/definitions/Number",
+      "category": "Common",
+      "description": "The numeric value from the enumeration to associate with the radio button instance.",
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "defaultValue": null,
+      "defaultValueInternal": 0
+    }
+  ],
+  "attributeCategories": [],
+  "functions": [],
+  "events": [],
+  "dataTypes": [
+    {
+      "schema": "Schema/Types.Schema.json"
+    }
+  ]
+}

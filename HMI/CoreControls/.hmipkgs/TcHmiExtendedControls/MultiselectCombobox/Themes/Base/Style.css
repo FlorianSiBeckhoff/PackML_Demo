@@ -1,0 +1,19 @@
+/** Styles for theme: Base */
+.TcHmi_Controls_TcHmiExtendedControls_MultiselectCombobox {
+
+}
+
+/* Create a custom checkbox */
+.TcHmi_Controls_TcHmiExtendedControls_MultiselectCombobox-template-dropdown [class$='-checkmark'] {
+    background-color: var(--tchmi-background-color-3);
+}
+
+/* Checkbox checked */
+.TcHmi_Controls_TcHmiExtendedControls_MultiselectCombobox-template-dropdown [class$='-container'] [class$='-multiselect-checkbox']:checked ~ [class$='-checkmark'] {
+    background-color: var(--tchmi-background-color-3);
+}
+
+/* Style the checkmark/indicator */
+.TcHmi_Controls_TcHmiExtendedControls_MultiselectCombobox-template-dropdown [class$='-container'] [class$='-checkmark'] [class$='-multiselect-svg-path'] {
+    stroke: var(--tchmi-highlight-color-1);
+}

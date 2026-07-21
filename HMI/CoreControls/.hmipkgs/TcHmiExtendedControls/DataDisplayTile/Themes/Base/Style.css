@@ -1,0 +1,10 @@
+/** Styles for theme: Base */
+.TcHmi_Controls_TcHmiExtendedControls_DataDisplayTile {
+    background-color: rgba(246, 247, 248, 128);
+    border-color: rgb(202, 206, 210);
+    color: #000000;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_DataDisplayTile-label {
+    color: #5F5E5E;
+}

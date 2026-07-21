@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "definitions": {
+    "TcHmi.Controls.TcHmiExtendedControls.StatusIndicator": {
+      "type": "object",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkControlType": "StatusIndicator",
+      "frameworkControlNamespace": "TcHmi.Controls.TcHmiExtendedControls"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+/** Styles for theme: Base */
+.TcHmi_Controls_TcHmiExtendedControls_LabeledInput {
+    color: #000000;
+}
+
+.TcHmi_Controls_TcHmiExtendedControls_LabeledInput-unit {
+    color: var(--tchmi-foreground-color-5);
+}
