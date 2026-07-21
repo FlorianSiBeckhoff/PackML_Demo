@@ -129,6 +129,28 @@ sample instead; the base module already exposes the required symbols through
 `PackMLStatemachine_HMI` / `ST_PackMLStatemachine_HMI` (decorated with `TcHmiSymbol`
 attributes).
 
+![Debug HMI](PackML_Demo/Assets/DebugHmi.png)
+
+The screen is built from two objects: `V_PackMLModule` is a reusable user control (one per
+module, bound to that module's `PackMLStatemachine_HMI` adapter), and `V_Main` embeds one
+instance of it and adds the machine-level extras on the right.
+
+- **State (left)** — `Current State` shows the live PackML state (`CurrentState`); the two
+  columns of buttons issue PackML commands by writing `StateCommand`
+  (`Abort`, `Stop`, `Clear`, `Complete`, `Reset`, `Start`, `Hold`, `Unhold`, `Suspend`,
+  `Unsuspend`). These map straight onto the base module's `ChangeState(E_PMLCommand)`.
+- **Mode (middle)** — `Current Mode` shows the active unit mode (`CurrentMode`); `Production`,
+  `Maintenance` and `Manual` write `ModeCommand` (`1`/`2`/`3`), which the adapter forwards to
+  `ChangeMode(DINT)`. These are the modes registered in `MachineModule.Initialize()`.
+- **Machine controls (right)** — the coloured `Start` / `Stop` / `Reset` buttons emulate
+  hardwired operator pushbuttons: they set the momentary `StartPressed` / `StopPressed` /
+  `ResetPressed` inputs on the HMI adapter (TRUE while held, FALSE on release) and are
+  enabled/highlighted by the matching `StartPermissive` / `StopPermissive` / `ResetPermissive`
+  flags. `Error Active` is bound to `MAIN.Machine.SimulatedError` — toggling it drives the
+  simulated-error path in `MachineModule` that aborts the state machine (cleared again in
+  `Clearing()`).
+- The footer shows the module `Name` (`Machine 1`).
+
 ## Disclaimer
 
 All sample code provided by FlorianSiBeckhoff are for illustrative purposes only and are provided "as is" and without any warranties, express or implied. Actual implementations in applications will vary significantly. FlorianSiBeckhoff shall have no liability for, and does not waive any rights in relation to, any code samples that it provides or the use of such code samples for any purpose.
